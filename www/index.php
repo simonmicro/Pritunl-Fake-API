@@ -30,6 +30,8 @@ if(isset($_GET['path'])) {
             //Load the new css file and change all invisible blocks to visible (this will show a little bit too much, but whatever...)
             $stylesheet .= file_get_contents('enterprise_plus.css');
             $stylesheet = preg_replace('/(.*display:.?)none.*/', '$1inline-block', $stylesheet);
+            //Now fix some too aggressive display strategies by appending their overrides...
+            $stylesheet .= file_get_contents('enterprise_plus_fix.css');
         }
         $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { transform:rotateZ(180deg); }\n.footer-brand { opacity: 0; }\n/* Generated for $license license */";
 
