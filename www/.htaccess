@@ -1,0 +1,11 @@
+Options -Indexes
+
+<ifModule mod_rewrite.c>
+    # Force HTTPS
+    RewriteEngine On
+
+    # Activate a virutal file system and send every request of a non existing file to index.php?apiReq=(...)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?path=$1 [L,QSA]
+</ifModule>
