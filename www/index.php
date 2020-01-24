@@ -22,16 +22,16 @@ if(isset($_GET['path'])) {
         $stylesheet = '';
         if(preg_match('/.*premium/', $body->license)) {
             $license = 'premium';
-        } else if(preg_match('/.*enterprise[^\w]/', $body->license)) {
+        } else if(preg_match('/.*enterprisenormal/', $body->license)) {
             $license = 'enterprise';
             $stylesheet .= file_get_contents('enterprise.css');
+            //Now fix some too aggressive display strategies by appending their overrides...
+            $stylesheet .= file_get_contents('enterprise_fix.css');
         } else if(preg_match('/.*enterpriseplus/', $body->license)) {
             $license = 'enterprise_plus';
             //Load the new css file and change all invisible blocks to visible (this will show a little bit too much, but whatever...)
-            $stylesheet .= file_get_contents('enterprise_plus.css');
+            $stylesheet .= file_get_contents('enterprise.css');
             $stylesheet = preg_replace('/(.*display:.?)none.*/', '$1inline-block', $stylesheet);
-            //Now fix some too aggressive display strategies by appending their overrides...
-            $stylesheet .= file_get_contents('enterprise_plus_fix.css');
         }
         $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { transform:rotateZ(180deg); }\n.footer-brand { opacity: 0; }\n/* Generated for $license license */";
 
@@ -89,7 +89,7 @@ if(isset($_GET['path'])) {
             $result->styles = new stdClass;
         }
         if($state == null) {
-            $result->error_msg = 'Unknown command. Use ["bad" | "canceled" | "active"] ["premium" | "enterprise" | "enterpriseplus"].';
+            $result->error_msg = 'Unknown command. Use ["bad" | "canceled" | "active"] ["premium" | "enterprisenormal" | "enterpriseplus"].';
         }
     } else if(preg_match('/checkout.*/', $_GET['path'])) {
         $result = array();
