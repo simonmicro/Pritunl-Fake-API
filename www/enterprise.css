@@ -1,9 +1,9 @@
 .navbar-nav li {
-    display: block !important;
+     display: block !important;
 }
-.container.links * {
-    display: block !important;
+ .container.links * {
+     display: block !important;
 }
-.modal-dialog .modal-body * {
-    display: block;
+ .modal-dialog .modal-body * {
+     display: block;
 }

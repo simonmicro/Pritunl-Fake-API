@@ -19,7 +19,7 @@ if(isset($_GET['path'])) {
         $result = new stdClass;
         $license = null;
         //The stylesheet determines what is shown on the dashboard (and by the plan). As default we change the colors of any text.
-        $stylesheet = '* { color: rgb(20, 150, 20); } .dark * { color: rgb(40, 180, 40); }';
+        $stylesheet = '';
         if(preg_match('/.*premium/', $body->license)) {
             $license = 'premium';
         } else if(preg_match('/.*enterprise[^\w]/', $body->license)) {
@@ -31,7 +31,7 @@ if(isset($_GET['path'])) {
             $stylesheet .= file_get_contents('enterprise_plus.css');
             $stylesheet = preg_replace('/(.*display:.?)none.*/', '$1inline-block', $stylesheet);
         }
-        $stylesheet .= '/* Generated for ' . $license . ' license */';
+        $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { transform:rotateZ(180deg); }\n.footer-brand { opacity: 0; }\n/* Generated for $license license */";
 
         $state = null;
         if($license) { //The following only makes sense if you selected any license
