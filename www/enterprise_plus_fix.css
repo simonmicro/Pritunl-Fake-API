@@ -10,7 +10,9 @@
 .enterprise-modal .enterprise-buttons .premium-switch, .enterprise-modal .enterprise-buttons .enterprise-switch, .enterprise-modal .enterprise-buttons .enterprise-plus-switch {
     display: none;
 }
-.enterprise-modal .modal .enterprise-info .premium-plan,
-.enterprise-modal .modal .enterprise-info .enterprise-plan {
+.enterprise-modal .modal .enterprise-info .premium-plan, .enterprise-modal .modal .enterprise-info .enterprise-plan {
 	display: none;
+}
+.users-list .users-list-title .org-id, .users-list .user .name-container .user-id, .servers-list .server .server-title .server-id, .servers-list .server .org .org-id, .servers-list .server .host .host-id, .servers-list .server .link .link-id {
+    display: none;
 }
