@@ -22,12 +22,12 @@ if(isset($_GET['path'])) {
         $stylesheet = '';
         if(preg_match('/.*premium/', $body->license)) {
             $license = 'premium';
-        } else if(preg_match('/.*enterprisenormal/', $body->license)) {
+        } else if(preg_match('/.*enterprise/', $body->license)) {
             $license = 'enterprise';
             $stylesheet .= file_get_contents('enterprise.css');
             //Now fix some too aggressive display strategies by appending their overrides...
             $stylesheet .= file_get_contents('enterprise_fix.css');
-        } else if(preg_match('/.*enterpriseplus/', $body->license)) {
+        } else if(preg_match('/.*ultimate/', $body->license)) {
             $license = 'enterprise_plus';
             //Load the new css file and change all invisible blocks to visible (this will show a little bit too much, but whatever...)
             $stylesheet .= file_get_contents('enterprise.css');
@@ -89,7 +89,7 @@ if(isset($_GET['path'])) {
             $result->styles = new stdClass;
         }
         if($state == null) {
-            $result->error_msg = 'Unknown command. Use ["bad" | "canceled" | "active"] ["premium" | "enterprisenormal" | "enterpriseplus"].';
+            $result->error_msg = 'Unknown command. Use ["bad" | "canceled" | "active"] ["premium" | "enterprise" | "ultimate"].';
         }
     } else if(preg_match('/checkout.*/', $_GET['path'])) {
         $result = array();
