@@ -39,7 +39,7 @@ if(isset($_GET['path'])) {
             $stylesheet = preg_replace('/(display:.?)none.?$/m', '$1inline-block', $stylesheet); //This WILL SHOW TOO MUCH... So we'll need a fix file...
             $stylesheet .= file_get_contents('ultimate_fix.css');
         }
-        $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { transform:rotateZ(180deg); }\n.footer-brand { opacity: 0; }\n/* Generated for $license license */";
+        $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { animation-name: pritunl-logo; animation-duration: 20s; animation-iteration-count: infinite; }\n@keyframes pritunl-logo { 0% { transform:rotate3d(1, 0, 0, 360deg); } 25% { transform:rotate3d(1, 0, 0, 0deg); } 50% { transform:rotate3d(0, 1, 0, 0deg); } 75% { transform:rotate3d(0, 1, 0, 360deg); } 100% { transform:rotate3d(0, 1, 0, 360deg); } }\n.footer-brand { opacity: 0; }\n/* Generated for $license license */";
 
         $state = null;
         if($license) { //The following only makes sense if you selected any license
@@ -102,7 +102,7 @@ if(isset($_GET['path'])) {
         $result = array();
         $result['zipCode'] = false;
         $result['allowRememberMe'] = false;
-        $result['image'] = $_SERVER['HTTP_HOST'] . '/logo.png';
+        $result['image'] = 'https://' . $_SERVER['HTTP_HOST'] . '/logo.png';
         $result['key'] = null; //Insert here a key to unlock the stripe store (is a string). And buy the subscription...
         $result['plans'] = array();
         $result['plans']['premium'] = array();
