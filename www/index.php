@@ -13,7 +13,7 @@ if(isset($_GET['path'])) {
     //Any notification/[version] will be answered here
     if(preg_match('/notification.*/', $_GET['path'])) {
         $result = new stdClass;
-        $result->message = 'Fake API endpoint active and reachable (contacted at ' . date('r') . ').';
+        $result->message = 'Fake API endpoint active and reachable (contacted at ' . date('r') . '). Tested with v1.29.2276.91.';
         $result->vpn = false; //Idk
         $result->www = false; //Idk
     } else if(isset($body->license) && preg_match('/subscription.*/', $_GET['path'])) {
