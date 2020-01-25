@@ -1,5 +1,5 @@
 # What is this? #
-This neat script provides a little fake API to unlock all premium/enterprise/enterprise+ (here called ultimate) features of your own Pritunl VPN server. If Pritunl wouldn't be mostly free you could call this a crack. An Open Source crack.
+This neat script provides a little fake API to unlock all premium/enterprise/enterprise+ (here called ultimate) features of your own Pritunl VPN server. If Pritunl wouldn't be mostly free already, you could call this a crack. An Open Source crack.
 
 ## How to setup (api) (optional) ##
 This is _optional_. You can simply use the default instance of this API (host is noted inside the `setup.sh` script) and profit from "automatic" updates.
