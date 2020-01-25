@@ -34,3 +34,7 @@
 .selector .selector-inner {
     display: none;
 }
+/* Remove second useless Theme selector in settings */
+.enterprise-plus .settings-modal .right .form-group.theme {
+    display: none;
+}
