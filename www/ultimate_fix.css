@@ -1,0 +1,19 @@
+/* Fix the sub info */
+.enterprise-modal .enterprise-info {
+    display: block;
+}
+.enterprise-modal .enterprise-buttons {
+    display: block;
+}
+.servers-list .server .server-info .server-output-link-viewer {
+    display: none;
+}
+.servers-list .server .server-info .server-graph-viewer {
+    display: none;
+}
+.enterprise-modal .modal .enterprise-info .enterprise-plus-plan {
+    display: block;
+}
+.enterprise-plus .server-routes-list .route .route-network-no-click {
+    display: none;
+}

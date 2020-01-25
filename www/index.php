@@ -1,4 +1,6 @@
 <?php
+//Author: Simon Beginn 2020
+
 header("Access-Control-Allow-Origin: *"); //Allow access from everywhere...
 $code = 200;
 
@@ -31,7 +33,11 @@ if(isset($_GET['path'])) {
             $license = 'enterprise_plus';
             //Load the new css file and change all invisible blocks to visible (this will show a little bit too much, but whatever...)
             $stylesheet .= file_get_contents('enterprise.css');
-            $stylesheet = preg_replace('/(.*display:.?)none.*/', '$1inline-block', $stylesheet);
+            $stylesheet = preg_replace('/(enterprise)/', '$1-temp-prefix', $stylesheet);
+            $stylesheet = preg_replace('/(enterprise)(-temp-prefix-plus)/', '$1', $stylesheet);
+            $stylesheet = preg_replace('/(enterprise)(-temp-prefix)/', '$1-plus', $stylesheet);
+            $stylesheet = preg_replace('/(display:.?)none.?$/m', '$1inline-block', $stylesheet); //This WILL SHOW TOO MUCH... So we'll need a fix file...
+            $stylesheet .= file_get_contents('ultimate_fix.css');
         }
         $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { transform:rotateZ(180deg); }\n.footer-brand { opacity: 0; }\n/* Generated for $license license */";
 
@@ -52,6 +58,7 @@ if(isset($_GET['path'])) {
             $result->plan = $license;
             $result->quantity = 42;
             $result->amount = 42;
+            $result->credit = 42;
             $result->period_end = false;
             $result->trial_end = false;
             $result->cancel_at_period_end = false;
