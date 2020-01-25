@@ -5,15 +5,28 @@
 .enterprise-modal .enterprise-buttons {
     display: block;
 }
+/* And show the enterprise+ (our ultimate) plan */
+.enterprise-modal .modal .enterprise-info .enterprise-plus-plan {
+    display: block;
+}
+/* @Servers Fix bad spacing? */
 .servers-list .server .server-info .server-output-link-viewer {
     display: none;
 }
 .servers-list .server .server-info .server-graph-viewer {
     display: none;
 }
-.enterprise-modal .modal .enterprise-info .enterprise-plus-plan {
-    display: block;
-}
+/* @Servers Fix double shown IPs */
 .enterprise-plus .server-routes-list .route .route-network-no-click {
+    display: none;
+}
+/* Fix wrongly shown NAT flag */
+.enterprise-plus .server-routes-list .route .route-nat {
+    display: none;
+}
+.server-routes-list .route .route-nat {
+    display: none;
+}
+.server-routes-list .route .route-nat, .server-routes-list .route .route-nat-netmap, .server-routes-list .route .route-net-gateway, .server-routes-list .route .route-default, .server-routes-list .route .route-virtual-network, .server-routes-list .route .route-network-link, .server-routes-list .route .route-server-link, .server-routes-list .route .route-vpc-id {
     display: none;
 }
