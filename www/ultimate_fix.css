@@ -38,3 +38,7 @@
 .enterprise-plus .settings-modal .right .form-group.theme {
     display: none;
 }
+/* Hide advanced settings... So the button is useable again... */
+.modal .modal-body .advanced {
+    display: none;
+}
