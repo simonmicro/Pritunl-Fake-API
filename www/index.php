@@ -103,7 +103,7 @@ if(isset($_GET['path'])) {
         $result['zipCode'] = false;
         $result['allowRememberMe'] = false;
         $result['image'] = $_SERVER['HTTP_HOST'] . '/logo.png';
-        $result['key'] = 'pk_live_*****l3lS******QViZ*****'; //Insert here a key to unlock the store. And buy the subsciption...
+        $result['key'] = null; //Insert here a key to unlock the stripe store (is a string). And buy the subscription...
         $result['plans'] = array();
         $result['plans']['premium'] = array();
         $result['plans']['premium']['amount'] = 42;
