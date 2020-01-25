@@ -30,3 +30,7 @@
 .server-routes-list .route .route-nat, .server-routes-list .route .route-nat-netmap, .server-routes-list .route .route-net-gateway, .server-routes-list .route .route-default, .server-routes-list .route .route-virtual-network, .server-routes-list .route .route-network-link, .server-routes-list .route .route-server-link, .server-routes-list .route .route-vpc-id {
     display: none;
 }
+/* Fix selectors */
+.selector .selector-inner {
+    display: none;
+}
