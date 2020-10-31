@@ -12,6 +12,6 @@ Make sure to support the devs by buying the subscription for your enterprise or 
 
 ### Nett2Know ###
 * This way will also block any communication to the Pritunl servers - so no calling home :)
-* The `ultimate` mode is still a little bit buggy. This is caused by some hacky workarounds to get all features displayed (the server is already unlocked). Caused by this workaround some items are maybe shown instead o being hidden. If you find such thing - just inform me about it.
+* The `ultimate` mode is still a little bit buggy. This is caused by some hacky workarounds to get all features displayed (the server is already unlocked). Caused by this workaround some items are maybe shown instead of being hidden. If you find such thing - just ping me about it.
 
 Have fun with your new premium/enterprise/ultimate Pritunl instance!
