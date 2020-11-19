@@ -26,6 +26,7 @@ Make sure to support the developers by buying the choosen subscription for your 
 This is _optional_. You can simply use the default instance of this API (host is noted inside the `setup.sh` script) and profit from "automatic" updates.
 
 Just transfer the `www` files inside a public accessible root-folder on your _seperate_ Apache (really everthing with PHP support works) webserver. Also make sure your instance has a valid SSL-certificate (Let's encrypt is enough), otherwise it may won't work.
+When you want to test your instance, just open the public accessible url in your browser and append `/notification` to it - when you see some JSON with the text, everthing worked!
 
 ### Nett2Know ###
 * This modification will also block any communication to the Pritunl servers - so no calling home :)
