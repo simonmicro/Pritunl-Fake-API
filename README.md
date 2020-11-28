@@ -31,6 +31,6 @@ When you want to test your instance, just open the public accessible url in your
 ### Nett2Know ###
 * This modification will also block any communication to the Pritunl servers - so no calling home :)
 * The `ultimate` mode is still a little bit buggy. This is caused by some hacky workarounds to get all features displayed (the server is already unlocked). Caused by this workaround some items are maybe shown instead o being hidden. If you find such thing - just inform me about it.
-* SSO will not work with this api version! As Pritunls own authentication servers handle the whole SSO stuff, track instance ids and verify users I won't implement this part for privacy concerns.
+* SSO will not work with this api version! As Pritunls own authentication servers handle the whole SSO stuff, track instance ids and verify users I won't implement this part for privacy concerns (and also this would need to be securly implemented and a database).
 
 Have fun with your new premium/enterprise/ultimate Pritunl instance!
