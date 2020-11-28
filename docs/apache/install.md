@@ -1,4 +1,4 @@
-# HowTo install the selfhost on Apache
+# HowTo install the selfhost api variant on Apache
 
 First you want to install the apache2.
 ```bash
