@@ -111,6 +111,9 @@ if(isset($_GET['path'])) {
         $result['plans']['enterprise']['amount'] = 42;
         $result['plans']['enterprise_plus'] = array();
         $result['plans']['enterprise_plus']['amount'] = 42;
+    } else if(preg_match('/auth\/.*/', $_GET['path'])) {
+        $result = array('error' => 'Sorry, but SSO is currently not supported.');
+        $code = 401; //Let Pritunl fail, without 500 codes (it will show 405)
     }
 }
 
