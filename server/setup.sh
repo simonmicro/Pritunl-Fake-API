@@ -25,8 +25,8 @@ winY=8
 choices=$(dialog --menu "What can I do for you?" 0 $winX 0 "Change" "Changes the API endpoint to your choice" "Reset" "Changes the API endpoint back to $ORIG_API_SERVER" 2>&1 >/dev/tty)
 ORIG_API_SERVER_ESCAPED=$(echo "$ORIG_API_SERVER" | sed -e 's/\./\\./g')
 ORIG_AUTH_SERVER_ESCAPED=$(echo "$ORIG_AUTH_SERVER" | sed -e 's/\./\\./g')
-FAKE_API_SERVER='this.domain.does.not.exist'
-FAKE_AUTH_SERVER_ESCAPED=$(echo "$FAKE_API_SERVER" | sed -e 's/\./\\./g')
+FAKE_AUTH_SERVER='this.domain.does.not.exist'
+FAKE_AUTH_SERVER_ESCAPED=$(echo "$FAKE_AUTH_SERVER" | sed -e 's/\./\\./g')
 
 get_fake_api() {
     FAKE_API_SERVER=$(dialog --title "Fake API address" --inputbox "Please enter the address from your faked API (with a valid HTTPS certificate). If you don't have one yourself, just use 'pritunl-api.simonmicro.de'." $winY $winX 2>&1 >/dev/tty)
