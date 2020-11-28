@@ -1,4 +1,5 @@
 ORIG_API_SERVER='app.pritunl.com'
+ORIG_AUTH_SERVER='auth.pritunl.com'
 
 if hash dialog 2>/dev/null; then
     echo "Dialog found..."
@@ -23,6 +24,9 @@ winX=80
 winY=8
 choices=$(dialog --menu "What can I do for you?" 0 $winX 0 "Change" "Changes the API endpoint to your choice" "Reset" "Changes the API endpoint back to $ORIG_API_SERVER" 2>&1 >/dev/tty)
 ORIG_API_SERVER_ESCAPED=$(echo "$ORIG_API_SERVER" | sed -e 's/\./\\./g')
+ORIG_AUTH_SERVER_ESCAPED=$(echo "$ORIG_AUTH_SERVER" | sed -e 's/\./\\./g')
+FAKE_API_SERVER='this.domain.does.not.exist'
+FAKE_AUTH_SERVER_ESCAPED=$(echo "$FAKE_API_SERVER" | sed -e 's/\./\\./g')
 
 get_fake_api() {
     FAKE_API_SERVER=$(dialog --title "Fake API address" --inputbox "Please enter the address from your faked API (with a valid HTTPS certificate). If you don't have one yourself, just use 'pritunl-api.simonmicro.de'." $winY $winX 2>&1 >/dev/tty)
@@ -41,8 +45,10 @@ do
             get_fake_api
             find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$ORIG_API_SERVER_ESCAPED/$FAKE_API_SERVER_ESCAPED/g"
             find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$ORIG_API_SERVER_ESCAPED/$FAKE_API_SERVER_ESCAPED/g"
+            find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$ORIG_AUTH_SERVER_ESCAPED/$FAKE_AUTH_SERVER_ESCAPED/g"
+            find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$ORIG_AUTH_SERVER_ESCAPED/$FAKE_AUTH_SERVER_ESCAPED/g"
             sleep 4
-            show_info "Changed $ORIG_API_SERVER to $FAKE_API_SERVER. Please make sure to restart the pritunl daemon now."
+            show_info "Changed $ORIG_API_SERVER to $FAKE_API_SERVER (and blocked any SSO server). Please make sure to restart the pritunl daemon now."
             ;;
         Reset)
             echo "Make sure to REMOVE ANY FAKED SUBSCRIPTION KEY (not by entering an other command - just remove them). You have now 30 seconds time to hit CTRL+C and do this."
@@ -50,8 +56,10 @@ do
             get_fake_api
             find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$FAKE_API_SERVER_ESCAPED/$ORIG_API_SERVER_ESCAPED/g"
             find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$FAKE_API_SERVER_ESCAPED/$ORIG_API_SERVER_ESCAPED/g"
+            find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$FAKE_AUTH_SERVER_ESCAPED/$ORIG_AUTH_SERVER_ESCAPED/g"
+            find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$FAKE_AUTH_SERVER_ESCAPED/$ORIG_AUTH_SERVER_ESCAPED/g"
             sleep 4
-            show_info "Changed $FAKE_API_SERVER to $ORIG_API_SERVER. Please make sure to restart the pritunl daemon now."
+            show_info "Changed $FAKE_API_SERVER to $ORIG_API_SERVER (and unblocked SSO features). Please make sure to restart the pritunl daemon now."
             ;;
     esac
 done
