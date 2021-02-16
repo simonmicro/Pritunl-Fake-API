@@ -22,14 +22,13 @@ services:
         volumes:
             - /etc/localtime:/etc/localtime:ro
         ports:
-            # Under this port the Pritunl web interface will be exposed
+            # Under this port the Pritunl web interface will be exposed (for reverse proxies)
             - 9700:9700
-            # The following are two random ports for the tcp+udp servers (you may edit these as needed!)
-            - 46648:46648
-            - 46648:46648/udp
+            # The following are the two default ports for the tcp+udp servers (you may edit these as needed!)
+            - 1194:1194
+            - 1194:1194/udp
         environment:
             - TZ=UTC
             - MONGODB_URI=mongodb://mongodb:27017/pritunl
+            # Also enable reverse proxie capabilities
             - REVERSE_PROXY=true
-        labels:
-            - com.centurylinklabs.watchtower.enable=false
