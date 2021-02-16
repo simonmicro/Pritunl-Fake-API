@@ -1,0 +1,35 @@
+version: '3'
+services:
+    mongodb:
+        image: mongo:latest
+        restart: always
+        volumes:
+            - ./mongodb:/data/db
+
+    pritunl:
+        image: realsimonmicro/pritunl-with-fake-api:latest
+        # Use the following to build the image from source.
+#        build:
+#            context: .
+        restart: always
+        depends_on:
+            - mongodb
+        privileged: true
+        sysctls:
+            - net.ipv6.conf.all.disable_ipv6=0
+        links:
+            - mongodb
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+        ports:
+            # Under this port the Pritunl web interface will be exposed
+            - 9700:9700
+            # The following are two random ports for the tcp+udp servers (you may edit these as needed!)
+            - 46648:46648
+            - 46648:46648/udp
+        environment:
+            - TZ=UTC
+            - MONGODB_URI=mongodb://mongodb:27017/pritunl
+            - REVERSE_PROXY=true
+        labels:
+            - com.centurylinklabs.watchtower.enable=false
