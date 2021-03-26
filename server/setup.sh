@@ -38,6 +38,8 @@ show_info() {
     dialog --msgbox "$1" $winY $winX
 }
 
+set -e
+
 for choice in $choices
 do
     case $choice in
