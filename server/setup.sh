@@ -29,7 +29,7 @@ ORIG_AUTH_SERVER_ESCAPED=$(echo "$ORIG_AUTH_SERVER" | sed -e 's/\./\\./g')
 get_fake_api() {
     FAKE_API_SERVER=$(dialog --title "Fake API address" --inputbox "Please enter the address from your faked API (with a valid HTTPS certificate). If you don't have one yourself, just use 'pritunl-api.simonmicro.de'." $winY $winX 2>&1 >/dev/tty)
     FAKE_API_SERVER_ESCAPED=$(echo "$FAKE_API_SERVER" | sed -e 's/\./\\./g')
-    FAKE_AUTH_SERVER="$FAKE_API_SERVER/auth/"
+    FAKE_AUTH_SERVER="$FAKE_API_SERVER\/auth\/"
     FAKE_AUTH_SERVER_ESCAPED=$(echo "$FAKE_AUTH_SERVER" | sed -e 's/\./\\./g')
     echo "Please wait, this script replacing all necessary parts of the server. This can take up to several minutes..."
 }
