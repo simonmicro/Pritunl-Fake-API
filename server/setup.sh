@@ -45,9 +45,9 @@ do
     case $choice in
         Change)
             get_fake_api
-            find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$ORIG_API_SERVER_ESCAPED/$FAKE_API_SERVER_ESCAPED/g"
+            find /usr/lib/pritunl/lib/python3.8 -type f -print0 | xargs -0 sed -i "s/$ORIG_API_SERVER_ESCAPED/$FAKE_API_SERVER_ESCAPED/g"
             find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$ORIG_API_SERVER_ESCAPED/$FAKE_API_SERVER_ESCAPED/g"
-            find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$ORIG_AUTH_SERVER_ESCAPED/$FAKE_AUTH_SERVER_ESCAPED/g"
+            find /usr/lib/pritunl/lib/python3.8 -type f -print0 | xargs -0 sed -i "s/$ORIG_AUTH_SERVER_ESCAPED/$FAKE_AUTH_SERVER_ESCAPED/g"
             find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$ORIG_AUTH_SERVER_ESCAPED/$FAKE_AUTH_SERVER_ESCAPED/g"
             sleep 4
             show_info "Changed $ORIG_API_SERVER to $FAKE_API_SERVER (and blocked any SSO server). Please make sure to restart the pritunl daemon now."
@@ -56,9 +56,9 @@ do
             echo "Make sure to REMOVE ANY FAKED SUBSCRIPTION KEY (not by entering an other command - just remove them). You have now 30 seconds time to hit CTRL+C and do this."
             sleep 30
             get_fake_api
-            find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$FAKE_API_SERVER_ESCAPED/$ORIG_API_SERVER_ESCAPED/g"
+            find /usr/lib/pritunl/lib/python3.8 -type f -print0 | xargs -0 sed -i "s/$FAKE_API_SERVER_ESCAPED/$ORIG_API_SERVER_ESCAPED/g"
             find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$FAKE_API_SERVER_ESCAPED/$ORIG_API_SERVER_ESCAPED/g"
-            find /usr/lib/pritunl/lib/python2.7 -type f -print0 | xargs -0 sed -i "s/$FAKE_AUTH_SERVER_ESCAPED/$ORIG_AUTH_SERVER_ESCAPED/g"
+            find /usr/lib/pritunl/lib/python3.8 -type f -print0 | xargs -0 sed -i "s/$FAKE_AUTH_SERVER_ESCAPED/$ORIG_AUTH_SERVER_ESCAPED/g"
             find /usr/share/pritunl/www/ -type f -print0 | xargs -0 sed -i "s/$FAKE_AUTH_SERVER_ESCAPED/$ORIG_AUTH_SERVER_ESCAPED/g"
             sleep 4
             show_info "Changed $FAKE_API_SERVER to $ORIG_API_SERVER (and unblocked SSO features). Please make sure to restart the pritunl daemon now."
