@@ -2,7 +2,7 @@
 This neat script provides a little fake API to unlock all premium/enterprise/enterprise+ (here called ultimate) features of your own Pritunl VPN server. If Pritunl wouldn't be mostly free already, you could call this a crack. An Open Source crack.
 
 ## How to setup (server) ##
-Take a look into the `server` folder: You _could_ use the Pritunl source there (or just download this specific version from their GitHub repo) to compile a guaranteed compartible version for this API or just download any other version of the Pritunl server and try your luck.
+Take a look into the `server` folder: You _could_ use the Pritunl source there (or just download this specific version from their GitHub repo) to compile a guaranteed compatible version for this API or just download any other version of the Pritunl server and try your luck.
 Then you'll need to execute the `setup.sh` script (preferable as `root`, as it needs to modify the Pritunl files directly).
 After that log in into the dashboard - there should be a "Update Notification":
 
