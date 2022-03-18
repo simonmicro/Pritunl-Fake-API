@@ -55,9 +55,9 @@ def doTheReplace(fromApiStr, toApiStr, fromAuthStr, toAuthStr):
                     newLines = newLines.replace(base64.b64encode(f'https://{fromApiStr}/subscription'.encode()).decode(), base64.b64encode(f'https://{toApiStr}/subscription'.encode()).decode())
                     if newLines != lines:
                         numFiles += 1
-                    fh = open(os.path.join(p, ff), 'w')
-                    fh.writelines(newLines)
-                    fh.close()
+                        fh = open(os.path.join(p, ff), 'w')
+                        fh.writelines(newLines)
+                        fh.close()
                 except UnicodeDecodeError:
                     # Brrr - binary files...
                     pass
