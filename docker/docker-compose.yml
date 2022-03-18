@@ -7,10 +7,9 @@ services:
             - ./mongodb:/data/db
 
     pritunl:
-        image: realsimonmicro/pritunl-with-fake-api:latest
         # Use the following to build the image from source.
-#        build:
-#            context: .
+        build:
+            context: .
         restart: always
         depends_on:
             - mongodb

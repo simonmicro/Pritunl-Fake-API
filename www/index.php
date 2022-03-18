@@ -1,5 +1,5 @@
 <?php
-//Author: Simon Beginn 2020
+//Author: simonmicro 2022
 
 header("Access-Control-Allow-Origin: *"); //Allow access from everywhere...
 $code = 200;
@@ -13,7 +13,7 @@ if(isset($_GET['path'])) {
     //Any notification/[version] will be answered here
     if(preg_match('/notification.*/', $_GET['path'])) {
         $result = new stdClass;
-        $result->message = 'Fake API endpoint for v1.30.2945.60 active and reachable (contacted at ' . date('r') . ').';
+        $result->message = 'Fake API endpoint for v1.30.3108.50 active and reachable (contacted at ' . date('r') . ').';
         $result->vpn = false; //Idk
         $result->www = false; //Idk
     } else if(isset($body->license) && preg_match('/subscription.*/', $_GET['path'])) {
@@ -40,6 +40,10 @@ if(isset($_GET['path'])) {
             $stylesheet .= file_get_contents('ultimate_fix.css');
         }
         $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { animation-name: pritunl-logo; animation-duration: 20s; animation-iteration-count: infinite; }\n@keyframes pritunl-logo { 0% { transform:rotate3d(1, 0, 0, 360deg); } 25% { transform:rotate3d(1, 0, 0, 0deg); } 50% { transform:rotate3d(0, 1, 0, 0deg); } 75% { transform:rotate3d(0, 1, 0, 360deg); } 100% { transform:rotate3d(0, 1, 0, 360deg); } }\n.footer-brand {visibility: hidden; }\n.footer-brand::before { visibility: visible; position: absolute; bottom: 0; right: 0; content: ''; background: url('https://" . $_SERVER['HTTP_HOST'] . "/logo.png'); background-size: cover; width: 1em; height: 1em; margin: 0.3em; }\n/* Generated for $license license */";
+
+        # Workaround for 70b354a10df55d60515f76d851dee42939864395
+        if($body->version >= 1003031084050)
+            $stylesheet = base64_encode($stylesheet);
 
         $state = null;
         if($license) { //The following only makes sense if you selected any license
