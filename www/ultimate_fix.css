@@ -42,3 +42,7 @@
 .modal .modal-body .advanced {
     display: none;
 }
+/* Hide admins tab, it will be shown only if the user is a super-user */
+.nav .admins {
+    display: none;
+}
