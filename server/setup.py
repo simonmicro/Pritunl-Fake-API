@@ -34,7 +34,7 @@ if args.reset != 'DEFAULT':
     sel = 'R'
 
 if interactive:
-    while sel not in ['I', 'U', 'B', 'Q']:
+    while sel not in ['I', 'R', 'B', 'Q']:
         sel = input('[I]nstall, [R]eset, [B]uy Pritunl, [Q]uit? ').upper()
     print()
 
