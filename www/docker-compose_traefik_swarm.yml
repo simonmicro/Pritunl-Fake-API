@@ -1,0 +1,40 @@
+# ### Advanced use for expert users ### #
+#
+#
+# Runs this API behind Traefik, on docker swarm
+# Make sure the mount volumes match correctly
+# Update the traefik router HOST
+# You need correctly setup traefik and docker network (here called proxy_external)
+
+version: '3.7'
+services:
+  web:
+    image: trafex/php-nginx
+    volumes:
+      - ".:/var/www/html:ro"
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+    labels:
+      - "traefik.enable=true"
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=proxy_external"
+        - "traefik.tags=proxy_external"
+        # Services
+        # API
+        - "traefik.http.services.pritunl-api.loadbalancer.server.port=8080"
+        # Router
+        - "traefik.http.routers.pritunl-api.entrypoints=https"
+        - "traefik.http.routers.pritunl-api.rule=Host(`mypritunlfakeapi.example.com`)"
+        - "traefik.http.routers.pritunl-api.service=pritunl-api"
+        - "traefik.http.routers.pritunl-api.tls=true"
+        - "traefik.http.routers.pritunl-api.tls.certresolver=http"
+    networks:
+      - default
+      - proxy_external
+
+
+networks:
+  proxy_external:
+    external: true
+    name: proxy_external
