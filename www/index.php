@@ -22,7 +22,7 @@ if(isset($_GET['path'])) {
         // Any notification/[version] will be answered here
         $msg = 'Fake API endpoint for v' . $minVersionName . ' active and reachable (contacted at ' . date('r') . ').';
         if(intval($pathParts[1]) < $minVersionNumber) {
-            $msg .= ' Please update your Pritunl instance to a newer version as this endpoint is written for a newer version.';
+            $msg .= ' Please update your Pritunl instance to a newer version as this endpoint may not compatible anymore.';
         }
         $result = array(
             'message' => $msg,
