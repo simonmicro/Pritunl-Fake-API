@@ -7,9 +7,10 @@ services:
             - ./mongodb:/data/db
 
     pritunl:
-        # Use the following to build the image from source.
+        # Use the following to build the image from source (assuming you're running inside the repository).
         build:
-            context: .
+            context: ../server
+            dockerfile: ../docker/Dockerfile
         restart: always
         depends_on:
             - mongodb

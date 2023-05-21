@@ -1,4 +1,0 @@
-/* Enable the display of the uids */
-.users-list .users-list-title .org-id, .users-list .user .name-container .user-id, .servers-list .server .server-title .server-id, .servers-list .server .org .org-id, .servers-list .server .host .host-id, .servers-list .server .link .link-id {
-    display: inline-block;
-}

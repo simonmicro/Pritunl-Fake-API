@@ -1,0 +1,50 @@
+* {
+    color: rgb(57, 83, 120);
+}
+
+.dark * {
+    color: rgb(220, 232, 232);
+}
+
+.navbar .navbar-brand {
+    animation-name: pritunl-logo;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pritunl-logo {
+    0% {
+        transform: rotate3d(1, 0, 0, 360deg);
+    }
+
+    25% {
+        transform: rotate3d(1, 0, 0, 0deg);
+    }
+
+    50% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    75% {
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
+
+body::before {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    content: '';
+    background: url("BACKGROUND_IMAGE_URI");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    opacity: 0.1;
+    z-index: -99;
+}
