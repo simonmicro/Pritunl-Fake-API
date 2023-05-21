@@ -1,123 +1,160 @@
 <?php
-//Author: simonmicro 2022
+// Author: simonmicro 2023
 
-header("Access-Control-Allow-Origin: *"); //Allow access from everywhere...
-$code = 200;
+// Config
+$minVersionNumber = 1003235044068;
+$minVersionName = '1.32.3504.68';
+$licenseCosts = 42; // insert here any price you want - "0" is a special value, which also breaks the UI ;)
 
-//Parse body (if possible)
+header('Access-Control-Allow-Origin: *'); //Allow access from everywhere...
+$code = 200; // Assuming everything is fine for now
+
+// Parse body (if possible)
 $body = json_decode(file_get_contents('php://input'));
+$clientVersion = isset($body->version) ? $body->version : null;
 
-//Fake API
+// Fake API
 $result = null;
 if(isset($_GET['path'])) {
-    //Any notification/[version] will be answered here
-    if(preg_match('/notification.*/', $_GET['path'])) {
-        $result = new stdClass;
-        $result->message = 'Fake API endpoint for v1.30.3116.68 active and reachable (contacted at ' . date('r') . ').';
-        $result->vpn = false; //Idk
-        $result->www = false; //Idk
-    } else if(isset($body->license) && preg_match('/subscription.*/', $_GET['path'])) {
-        //The following only works with the body containing the desired license
-        $result = new stdClass;
-        $license = null;
-        //The stylesheet determines what is shown on the dashboard (and by the plan). As default we change the colors of any text.
-        $stylesheet = '';
-        if(preg_match('/.*premium/', $body->license)) {
-            $license = 'premium';
-        } else if(preg_match('/.*enterprise/', $body->license)) {
-            $license = 'enterprise';
-            $stylesheet .= file_get_contents('enterprise.css');
-            //Now fix some too aggressive display strategies by appending their overrides...
-            $stylesheet .= file_get_contents('enterprise_fix.css');
-        } else if(preg_match('/.*ultimate/', $body->license)) {
-            $license = 'enterprise_plus';
-            //Load the new css file and change all invisible blocks to visible (this will show a little bit too much, but whatever...)
-            $stylesheet .= file_get_contents('enterprise.css');
-            $stylesheet = preg_replace('/(enterprise)/', '$1-temp-prefix', $stylesheet);
-            $stylesheet = preg_replace('/(enterprise)(-temp-prefix-plus)/', '$1', $stylesheet);
-            $stylesheet = preg_replace('/(enterprise)(-temp-prefix)/', '$1-plus', $stylesheet);
-            $stylesheet = preg_replace('/(display:.?)none.?$/m', '$1inline-block', $stylesheet); //This WILL SHOW TOO MUCH... So we'll need a fix file...
-            $stylesheet .= file_get_contents('ultimate_fix.css');
+    $path = trim($_GET['path'], ' /');
+    $pathParts = explode('/', $_GET['path']);
+    if(count($pathParts) > 1 && $pathParts[0] == 'notification') {
+        // Any notification/[version] will be answered here
+        $msg = 'Fake API endpoint for v' . $minVersionName . ' active and reachable (contacted at ' . date('r') . ').';
+        if(intval($pathParts[1]) < $minVersionNumber) {
+            $msg .= ' Please update your Pritunl instance to a newer version as this endpoint is written for a newer version.';
         }
-        $stylesheet .= "* { color: rgb(57, 83, 120); }\n.dark * { color: rgb(200, 242, 242); }\n.navbar .navbar-brand { animation-name: pritunl-logo; animation-duration: 20s; animation-iteration-count: infinite; }\n@keyframes pritunl-logo { 0% { transform:rotate3d(1, 0, 0, 360deg); } 25% { transform:rotate3d(1, 0, 0, 0deg); } 50% { transform:rotate3d(0, 1, 0, 0deg); } 75% { transform:rotate3d(0, 1, 0, 360deg); } 100% { transform:rotate3d(0, 1, 0, 360deg); } }\n.footer-brand {visibility: hidden; }\n.footer-brand::before { visibility: visible; position: absolute; bottom: 0; right: 0; content: ''; background: url('https://" . $_SERVER['HTTP_HOST'] . "/logo.png'); background-size: cover; width: 1em; height: 1em; margin: 0.3em; }\n/* Generated for $license license */";
+        $result = array(
+            'message' => $msg,
+            'vpn' => false, // idk
+            'www' => false // idk
+        );
+    } else if(count($pathParts) > 0 && $pathParts[0] == 'auth') {
+        $result = array('error_msg' => 'Sorry, but SSO is currently not supported.');
+        $code = 401; // Let Pritunl fail, without 500 codes (it will show 405)
+    } else if(count($pathParts) > 0 && $pathParts[0] == 'ykwyhd') {
+        // The "you-know-what-you-have-done" endpoint -> used as dummy url target
+        $result = array('detail' => 'You know what you have done.');
+    } else if($clientVersion != null && $clientVersion < $minVersionNumber) {
+        // Check if the instance is too old for us (for now following operators)
+        $result = array('error_msg' => 'This API supports v' . $minVersionName . ' (' . $minVersionNumber . ') or higher.');
+        $code = 473;
+    } else if(count($pathParts) > 0 && $pathParts[0] == 'subscription') {
+        // The following only works with the body containing the desired license
+        if(isset($body->license)) {
+            $license = null;
+            $user = md5(base64_encode($body->license));
+            $url_key = substr($user, 0, 8);
+            $input = strtolower($body->license);
 
-        # Workaround for 70b354a10df55d60515f76d851dee42939864395
-        if($body->version >= 1003031084050 and $body->version < 1003031164068)
-            $stylesheet = base64_encode($stylesheet);
-
-        $state = null;
-        if($license) { //The following only makes sense if you selected any license
-            if(strpos($body->license, 'bad') !== false) {
-                $state = 'Bad';
-            } else if(strpos($body->license, 'canceled') !== false) {
-                $state = 'canceled';
-            }  else if(strpos($body->license, 'active') !== false) {
-                $state = 'Active';
+            // The stylesheet determines what is shown on the dashboard (and by the plan).
+            $stylesheet = '';
+            if(str_contains($input, 'premium')) {
+                $license = 'premium';
+            } else if(str_contains($input, 'enterprise')) {
+                $license = 'enterprise';
+                $stylesheet = file_get_contents('enterprise.css');
+                $stylesheet = preg_replace('/(\.enterprise)([\.\ ])/', '$1-'.$url_key.'$2', $stylesheet); // Install user license "id" into CSS class
+            } else if(str_contains($input, 'ultimate')) {
+                $license = 'enterprise_plus';
+                $stylesheet = file_get_contents('enterprise_plus.css');
+                $stylesheet = preg_replace('/(\.enterprise-plus)([\.\ ])/', '$1-'.$url_key.'$2', $stylesheet); // Install user license "id" into CSS class
             }
-        }
+            $stylesheet .= "\n/* custom.css */\n";
+            $stylesheet .= str_replace('BACKGROUND_IMAGE_URI', "https://" . $_SERVER['HTTP_HOST'] . "/logo.png", file_get_contents('custom.css'));
+            $stylesheet .= "\n/* Generated for $license license */";
 
-        if($state == 'Active') {
-            $result->active = $body->version < 1003031164068 ? $license != 'premium' : $license == 'enterprise_plus';
-            $result->status = $state;
-            $result->plan = $license;
-            $result->quantity = 42;
-            $result->amount = 42;
-            $result->credit = 42;
-            $result->period_end = false;
-            $result->trial_end = false;
-            $result->cancel_at_period_end = false;
-            $result->styles = new stdClass;
-            $result->styles->etag = 42;
-            $result->styles->last_modified = time();
-            $result->styles->data = $stylesheet;
+            $state = null;
+            if($license) { // The following only makes sense if you selected any license
+                if(str_starts_with($input, 'bad')) {
+                    $state = 'Bad';
+                } else if(str_starts_with($input, 'canceled')) {
+                    $state = 'canceled';
+                }  else if(str_starts_with($input, 'active')) {
+                    $state = 'Active';
+                }
+            }
+
+            if($state == 'Active') {
+                $result = array(
+                    'active' => $license == 'enterprise_plus',
+                    'status' => $state,
+                    'plan' => $license,
+                    'url_key' => $user,
+                    'quantity' => 42,
+                    'amount' => $licenseCosts,
+                    'credit' => 42,
+                    'period_end' => false,
+                    'trial_end' => false,
+                    'cancel_at_period_end' => false,
+                    'premium_buy_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/ykwyhd/',
+                    'enterprise_buy_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/ykwyhd/',
+                    'portal_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/ykwyhd/',
+                    'styles' => array(
+                        'etag' => null, // the resource is NOT encrypted
+                        'last_modified' => time(),
+                        'data' => $stylesheet
+                    )
+                );
+            } else if($state == 'Canceled') {
+                $result = array(
+                    'active' => false, // Here we can savely disable any style
+                    'status' => $state,
+                    'plan' => $license,
+                    'quantity' => 42,
+                    'amount' => 42,
+                    'period_end' => false,
+                    'trial_end' => false,
+                    'cancel_at_period_end' => false,
+                    'styles' => array(
+                        'etag' => null,
+                        'last_modified' => null,
+                        'data' => null
+                    )
+                );
+            } else if($state == 'Bad' || $state == null) {
+                $code = 470; // -> bad license
+                // Do not mention "canceled" in "error_msg", as it is somewhat useless (same as bad)...
+                $result = array(
+                    'error' => 'license_invalid',
+                    'error_msg' => $state == null ? 'Unknown command. Use ["bad" | "active"] ["premium" | "enterprise" | "ultimate"].' : 'As you wish.',
+                    'active' => false,
+                    'status' => null,
+                    'plan' => null,
+                    'quantity' => null,
+                    'amount' => null,
+                    'period_end' => null,
+                    'trial_end' => null,
+                    'cancel_at_period_end' => null,
+                    'styles' => array(
+                        'etag' => null,
+                        'last_modified' => null,
+                        'data' => null
+                    )
+                );
+            }
+        } else {
+            $result = array('error_msg' => 'Missing license in body.');
+            $code = 401;
         }
-        if($state == 'Canceled') {
-            $result->active = false; //Here we can savely disable any styles
-            $result->status = $state;
-            $result->plan = $license;
-            $result->quantity = 42;
-            $result->amount = 42;
-            $result->period_end = false;
-            $result->trial_end = false;
-            $result->cancel_at_period_end = false;
-            $result->styles = new stdClass;
-            $result->styles->etag = 42;
-            $result->styles->last_modified = time();
-            $result->styles->data = $stylesheet;
-        }
-        if($state == 'Bad' || $state == null) {
-            $code = 470; //-> bad license
-            $result->error_msg = 'As you wish.';
-            $result->error = 'license_invalid';
-            $result->active = false;
-            $result->status = false;
-            $result->plan = null;
-            $result->quantity = 0;
-            $result->amount = 0;
-            $result->period_end = true;
-            $result->trial_end = true;
-            $result->cancel_at_period_end = null;
-            $result->styles = new stdClass;
-        }
-        if($state == null) {
-            $result->error_msg = 'Unknown command. Use ["bad" | "canceled" | "active"] ["premium" | "enterprise" | "ultimate"].';
-        }
-    } else if(preg_match('/checkout.*/', $_GET['path'])) {
-        $result = array();
-        $result['zipCode'] = false;
-        $result['allowRememberMe'] = false;
-        $result['image'] = 'https://' . $_SERVER['HTTP_HOST'] . '/logo.png';
-        $result['key'] = null; //Insert here a key to unlock the stripe store (is a string). And buy the subscription...
-        $result['plans'] = array();
-        $result['plans']['premium'] = array();
-        $result['plans']['premium']['amount'] = 42;
-        $result['plans']['enterprise'] = array();
-        $result['plans']['enterprise']['amount'] = 42;
-        $result['plans']['enterprise_plus'] = array();
-        $result['plans']['enterprise_plus']['amount'] = 42;
-    } else if(preg_match('/auth\/.*/', $_GET['path'])) {
-        $result = array('error' => 'Sorry, but SSO is currently not supported.');
-        $code = 401; //Let Pritunl fail, without 500 codes (it will show 405)
+    } else if(count($pathParts) > 0 && $pathParts[0] == 'checkout') {
+        $result = array(
+            'zipCode' => false,
+            'allowRememberMe' => false,
+            'image' => 'https://' . $_SERVER['HTTP_HOST'] . '/logo.png',
+            'key' => null, // Insert here a key to unlock the stripe store (is a string). And buy the subscription...
+            'plans' => array(
+                'premium' => array(
+                    'amount' => $licenseCosts
+                ),
+                'enterprise' => array(
+                    'amount' => $licenseCosts
+                ),
+                'enterprise_plus' => array(
+                    'amount' => $licenseCosts
+                ),
+            )
+        );
     }
 }
 
@@ -125,12 +162,12 @@ header('Content-Type: application/json');
 http_response_code($code);
 echo json_encode($result);
 
-//Should we log any request? Used for the development and debugging of this API
+// Should we log any request? Used for the development and debugging of this API
 if(false) {
-    //Log request
-    file_put_contents('access.log', "\n" . date('r') . ":\t" . json_encode(array('head' => getallheaders(), 'body' => file_get_contents('php://input'), 'get' => $_GET, 'post' => $_POST, 'answer_code' => $code, 'answer' => $result)) . "\n", FILE_APPEND);
+    // Log request
+    file_put_contents('access.log', "\n" . date('r') . ":\n" . json_encode(array('head' => getallheaders(), 'body' => file_get_contents('php://input'), 'get' => $_GET, 'post' => $_POST, 'answer_code' => $code, 'answer' => $result)) . "\n", FILE_APPEND);
 
-    //GET operator to clear log file
+    // GET operator to clear log file
     if(isset($_GET['clear']))
         file_put_contents('access.log', '');
 }

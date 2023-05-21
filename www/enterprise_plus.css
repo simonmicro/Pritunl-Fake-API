@@ -1,4 +1,4 @@
-/* From https://demo.pritunl.com/subscription/styles/enterprise/1003033434047.css */
+/* From https://demo.pritunl.com/subscription/styles/enterprise_plus/1003033434047.css */
 
 .background-clip-padding {
 	-webkit-background-clip: padding;
@@ -1857,94 +1857,94 @@ header.blur {
 .subscribe-enterprise-plus {
 	display: none !important
 }
-.enterprise .subscribe-modal .modal .subscribe-buttons,
+.enterprise-plus .subscribe-modal .modal .subscribe-buttons,
 .enterprise-license .subscribe-modal .modal .subscribe-buttons {
 	display: none
 }
-.enterprise .dashboard .status-container .status-item.hosts-status {
+.enterprise-plus .dashboard .status-container .status-item.hosts-status {
 	display: table-cell
 }
-.enterprise .settings-modal .right .form-group.theme {
+.enterprise-plus .settings-modal .right .form-group.theme {
 	display: block
 }
-.enterprise .settings-modal .form-group.auditing {
+.enterprise-plus .settings-modal .form-group.auditing {
 	display: block
 }
-.enterprise .settings-modal .form-group.monitoring,
-.enterprise .settings-modal .form-group.pin-mode,
-.enterprise .settings-modal .influxdb-url-box,
-.enterprise .settings-modal .influxdb-token-box,
-.enterprise .settings-modal .influxdb-org-box,
-.enterprise .settings-modal .influxdb-bucket-box {
+.enterprise-plus .settings-modal .form-group.monitoring,
+.enterprise-plus .settings-modal .form-group.pin-mode,
+.enterprise-plus .settings-modal .influxdb-url-box,
+.enterprise-plus .settings-modal .influxdb-token-box,
+.enterprise-plus .settings-modal .influxdb-org-box,
+.enterprise-plus .settings-modal .influxdb-bucket-box {
 	display: block
 }
-.enterprise .modal .modal-body .api-token input,
-.enterprise .modal .modal-body .api-secret input,
-.enterprise .modal .modal-body .auth-token input,
-.enterprise .modal .modal-body .auth-secret input {
+.enterprise-plus .modal .modal-body .api-token input,
+.enterprise-plus .modal .modal-body .api-secret input,
+.enterprise-plus .modal .modal-body .auth-token input,
+.enterprise-plus .modal .modal-body .auth-secret input {
 	width: 300px;
 	font-family: 'Lucida Console', Monaco, monospace
 }
-.enterprise .settings-modal .form-group.public-address,
-.enterprise .settings-modal .form-group.public-address6,
-.enterprise .settings-modal .form-group.routed-subnet6,
-.enterprise .settings-modal .form-group.routed-subnet6-wg {
+.enterprise-plus .settings-modal .form-group.public-address,
+.enterprise-plus .settings-modal .form-group.public-address6,
+.enterprise-plus .settings-modal .form-group.routed-subnet6,
+.enterprise-plus .settings-modal .form-group.routed-subnet6-wg {
 	display: none
 }
-.enterprise .key-link-modal .key-onc-link {
+.enterprise-plus .key-link-modal .key-onc-link {
 	display: block
 }
-.enterprise .enterprise-modal .enterprise-info,
+.enterprise-plus .enterprise-modal .enterprise-info,
 .enterprise-license .enterprise-modal .enterprise-info {
 	display: block
 }
-.enterprise .enterprise-modal .enterprise-buttons .enterprise-support-link {
+.enterprise-plus .enterprise-modal .enterprise-buttons .enterprise-support-link {
 	display: inline-block;
 	background-image: url('data:image/png;base64,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');
 	background-repeat: no-repeat;
 	background-position: 9px 5px;
 	background-size: 34px
 }
-.enterprise .enterprise-modal .enterprise-buttons .enterprise-support {
+.enterprise-plus .enterprise-modal .enterprise-buttons .enterprise-support {
 	display: none
 }
-.enterprise .enterprise-modal .enterprise-buttons,
+.enterprise-plus .enterprise-modal .enterprise-buttons,
 .enterprise-license .enterprise-modal .enterprise-buttons {
 	display: block
 }
-.enterprise .enterprise-modal .enterprise-info .enterprise-plan,
-.enterprise-license .enterprise-modal .enterprise-info .enterprise-plan {
+.enterprise-plus .enterprise-modal .enterprise-info .enterprise-plus-plan,
+.enterprise-license .enterprise-modal .enterprise-info .enterprise-plus-plan {
 	display: inline
 }
-.enterprise .enterprise-modal .enterprise-buttons .enterprise-switch,
-.enterprise-license .enterprise-modal .enterprise-buttons .enterprise-switch {
+.enterprise-plus .enterprise-modal .enterprise-buttons .enterprise-plus-switch,
+.enterprise-license .enterprise-modal .enterprise-buttons .enterprise-plus-switch {
 	display: inline-block
 }
 .enterprise-license .enterprise-modal .enterprise-buttons .enterprise-update {
 	display: none
 }
-.enterprise .orgs-list .orgs-email-selected {
+.enterprise-plus .orgs-list .orgs-email-selected {
 	display: inline-block
 }
-.enterprise .nav .hosts {
+.enterprise-plus .nav .hosts {
 	display: block
 }
-.enterprise .navbar .audit-admin {
+.enterprise-plus .navbar .audit-admin {
 	display: block
 }
-.enterprise .navbar .audit-admin a {
+.enterprise-plus .navbar .audit-admin a {
 	display: none
 }
-.enterprise .settings-modal .modal .server-cert,
-.enterprise .settings-modal .modal .server-key,
-.enterprise .settings-modal .modal .client-reconnect {
+.enterprise-plus .settings-modal .modal .server-cert,
+.enterprise-plus .settings-modal .modal .server-key,
+.enterprise-plus .settings-modal .modal .client-reconnect {
 	display: block
 }
-.enterprise .settings-modal .modal .sso-saml-cert textarea,
-.enterprise .settings-modal .modal .sso-google-key textarea,
-.enterprise .settings-modal .modal .server-cert textarea,
-.enterprise .settings-modal .modal .server-key textarea,
-.enterprise .settings-modal .modal .oracle-public-key textarea {
+.enterprise-plus .settings-modal .modal .sso-saml-cert textarea,
+.enterprise-plus .settings-modal .modal .sso-google-key textarea,
+.enterprise-plus .settings-modal .modal .server-cert textarea,
+.enterprise-plus .settings-modal .modal .server-key textarea,
+.enterprise-plus .settings-modal .modal .oracle-public-key textarea {
 	resize: none;
 	font-size: 10px;
 	font-family: 'Lucida Console', Monaco, monospace;
@@ -1952,19 +1952,19 @@ header.blur {
 	-moz-border-radius: 2px;
 	border-radius: 2px
 }
-.enterprise .settings-modal .modal .sso-saml-cert textarea,
-.enterprise .settings-modal .modal .sso-google-key textarea,
-.enterprise .settings-modal .modal .server-cert textarea {
+.enterprise-plus .settings-modal .modal .sso-saml-cert textarea,
+.enterprise-plus .settings-modal .modal .sso-google-key textarea,
+.enterprise-plus .settings-modal .modal .server-cert textarea {
 	width: 250px
 }
-.enterprise .settings-modal .modal .server-key textarea,
-.enterprise .settings-modal .modal .oracle-public-key textarea {
+.enterprise-plus .settings-modal .modal .server-key textarea,
+.enterprise-plus .settings-modal .modal .oracle-public-key textarea {
 	width: 284px
 }
-.enterprise .settings-modal .modal-header .modal-advanced-toggle {
+.enterprise-plus .settings-modal .modal-header .modal-advanced-toggle {
 	display: block
 }
-.enterprise .location-host-conf-modal .modal textarea {
+.enterprise-plus .location-host-conf-modal .modal textarea {
 	resize: none;
 	width: 100%;
 	font-size: 10px;
@@ -1973,57 +1973,57 @@ header.blur {
 	-moz-border-radius: 2px;
 	border-radius: 2px
 }
-.enterprise .add-org-modal .auth-toggle,
-.enterprise .add-org-modal .auth-token,
-.enterprise .add-org-modal .auth-secret,
-.enterprise .add-org-modal .generate-new-auth-key,
-.enterprise .rename-org-modal .auth-toggle,
-.enterprise .rename-org-modal .auth-token,
-.enterprise .rename-org-modal .auth-secret,
-.enterprise .rename-org-modal .generate-new-auth-key {
+.enterprise-plus .add-org-modal .auth-toggle,
+.enterprise-plus .add-org-modal .auth-token,
+.enterprise-plus .add-org-modal .auth-secret,
+.enterprise-plus .add-org-modal .generate-new-auth-key,
+.enterprise-plus .rename-org-modal .auth-toggle,
+.enterprise-plus .rename-org-modal .auth-token,
+.enterprise-plus .rename-org-modal .auth-secret,
+.enterprise-plus .rename-org-modal .generate-new-auth-key {
 	display: block
 }
-.enterprise .add-user-modal .port-forwarding,
-.enterprise .add-user-modal .yubikey-id,
-.enterprise .add-user-modal .client-to-client-toggle,
-.enterprise .add-user-modal .network-links,
-.enterprise .add-user-modal .dns-servers,
-.enterprise .add-user-modal .dns-suffix,
-.enterprise .add-user-modal .groups,
-.enterprise .rename-user-modal .port-forwarding,
-.enterprise .rename-user-modal .yubikey-id,
-.enterprise .rename-user-modal .client-to-client-toggle,
-.enterprise .rename-user-modal .network-links,
-.enterprise .rename-user-modal .dns-servers,
-.enterprise .rename-user-modal .dns-suffix,
-.enterprise .rename-user-modal .groups,
-.enterprise .add-user-modal .modal-header .modal-advanced-toggle,
-.enterprise .rename-user-modal .modal-header .modal-advanced-toggle {
+.enterprise-plus .add-user-modal .port-forwarding,
+.enterprise-plus .add-user-modal .yubikey-id,
+.enterprise-plus .add-user-modal .client-to-client-toggle,
+.enterprise-plus .add-user-modal .network-links,
+.enterprise-plus .add-user-modal .dns-servers,
+.enterprise-plus .add-user-modal .dns-suffix,
+.enterprise-plus .add-user-modal .groups,
+.enterprise-plus .rename-user-modal .port-forwarding,
+.enterprise-plus .rename-user-modal .yubikey-id,
+.enterprise-plus .rename-user-modal .client-to-client-toggle,
+.enterprise-plus .rename-user-modal .network-links,
+.enterprise-plus .rename-user-modal .dns-servers,
+.enterprise-plus .rename-user-modal .dns-suffix,
+.enterprise-plus .rename-user-modal .groups,
+.enterprise-plus .add-user-modal .modal-header .modal-advanced-toggle,
+.enterprise-plus .rename-user-modal .modal-header .modal-advanced-toggle {
 	display: block
 }
-.enterprise .modal .groups-label {
+.enterprise-plus .modal .groups-label {
 	display: inline-block
 }
-.enterprise .add-user-modal .groups label,
-.enterprise .rename-user-modal .groups label {
+.enterprise-plus .add-user-modal .groups label,
+.enterprise-plus .rename-user-modal .groups label {
 	display: block
 }
-.enterprise .server-settings-modal .groups label {
+.enterprise-plus .server-settings-modal .groups label {
 	display: block
 }
-.enterprise .server-settings-modal .groups {
+.enterprise-plus .server-settings-modal .groups {
 	display: block
 }
-.enterprise .server-settings-modal .groups label {
+.enterprise-plus .server-settings-modal .groups label {
 	display: block
 }
-.enterprise .select2-drop,
-.enterprise .select2-drop-mask {
+.enterprise-plus .select2-drop,
+.enterprise-plus .select2-drop-mask {
 	display: none !important
 }
-.enterprise .users-list .user-dns-name,
-.enterprise .users-list .user-network-link,
-.enterprise .users-list .user-groups {
+.enterprise-plus .users-list .user-dns-name,
+.enterprise-plus .users-list .user-network-link,
+.enterprise-plus .users-list .user-groups {
 	display: block;
 	visibility: visible;
 	margin: 10px 3px 0 0;
@@ -2032,30 +2032,30 @@ header.blur {
 	overflow: hidden;
 	white-space: nowrap
 }
-.enterprise .users-list .user-dns-name {
+.enterprise-plus .users-list .user-dns-name {
 	max-width: 230px
 }
-.enterprise .users-list .user-groups {
+.enterprise-plus .users-list .user-groups {
 	max-width: 240px
 }
-.enterprise .users-list .user-dns-name .fa,
-.enterprise .users-list .user-network-link .fa,
-.enterprise .users-list .user-groups .fa {
+.enterprise-plus .users-list .user-dns-name .fa,
+.enterprise-plus .users-list .user-network-link .fa,
+.enterprise-plus .users-list .user-groups .fa {
 	color: #60829c
 }
-.enterprise .users-list .user-dns-name .name,
-.enterprise .users-list .user-network-link .link,
-.enterprise .users-list .user-groups .group {
+.enterprise-plus .users-list .user-dns-name .name,
+.enterprise-plus .users-list .user-network-link .link,
+.enterprise-plus .users-list .user-groups .group {
 	margin: 0 3px 0 3px
 }
-.enterprise .hosts-list .hosts-list-title {
+.enterprise-plus .hosts-list .hosts-list-title {
 	color: #4d535c;
 	display: inline-block;
 	margin-top: 6px;
 	margin-bottom: 19px;
 	font-size: 22px
 }
-.enterprise .hosts-list-container .no-hosts {
+.enterprise-plus .hosts-list-container .no-hosts {
 	text-align: center;
 	font-size: 14px;
 	padding: 10px;
@@ -2063,11 +2063,11 @@ header.blur {
 	background-color: #f5f5f5;
 	display: none
 }
-.enterprise .hosts-list .hosts-list-buttons {
+.enterprise-plus .hosts-list .hosts-list-buttons {
 	float: right;
 	display: block
 }
-.enterprise .hosts-list .host {
+.enterprise-plus .hosts-list .host {
 	margin-bottom: 25px;
 	border: 1px solid #cfcfcf;
 	background-color: #f9f9f9;
@@ -2082,17 +2082,17 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .hosts-list .host .host-title {
+.enterprise-plus .hosts-list .host .host-title {
 	margin: 0;
 	display: inline-block;
 	line-height: 16px;
 	position: relative;
 	top: 2px
 }
-.enterprise .hosts-list .host .host-title a {
+.enterprise-plus .hosts-list .host .host-title a {
 	font-size: 19px
 }
-.enterprise .hosts-list .host .host-header {
+.enterprise-plus .hosts-list .host .host-header {
 	background-color: #fff;
 	padding: 10px 11px 16px 14px;
 	border-bottom: 1px solid #ccc;
@@ -2103,35 +2103,35 @@ header.blur {
 	-moz-border-top-right-radius: 2px;
 	border-top-right-radius: 2px
 }
-.enterprise .hosts-list .host .host-header button {
+.enterprise-plus .hosts-list .host .host-header button {
 	margin-left: 10px;
 	float: right
 }
-.enterprise .hosts-list .host .host-title a {
+.enterprise-plus .hosts-list .host .host-title a {
 	cursor: pointer
 }
-.enterprise .hosts-list .host .host-title .host-id {
+.enterprise-plus .hosts-list .host .host-title .host-id {
 	position: relative;
 	color: #4d535c;
 	font-size: 10px;
 	display: none;
 	margin-left: 5px
 }
-.enterprise .hosts-list .host .host-title .host-id {
+.enterprise-plus .hosts-list .host .host-title .host-id {
 	top: -2px
 }
-.enterprise .hosts-list .host.show-hidden .host-title .host-id {
+.enterprise-plus .hosts-list .host.show-hidden .host-title .host-id {
 	display: inline
 }
-.enterprise .hosts-list .host .host-info {
+.enterprise-plus .hosts-list .host .host-info {
 	background-color: #fff
 }
-.enterprise .hosts-list .host .host-info .status-items {
+.enterprise-plus .hosts-list .host .host-info .status-items {
 	margin-right: 11px;
 	width: 410px;
 	float: left
 }
-.enterprise .hosts-list .host .host-info .host-usage-title {
+.enterprise-plus .hosts-list .host .host-info .host-usage-title {
 	color: #4d535c;
 	font-size: 16px;
 	margin: 0;
@@ -2139,106 +2139,106 @@ header.blur {
 	padding-right: 10px;
 	height: 24px
 }
-.enterprise .hosts-list .host .host-info .host-usage-title .btn {
+.enterprise-plus .hosts-list .host .host-info .host-usage-title .btn {
 	padding: 0 4px
 }
-.enterprise .hosts-list .host .host-info .graph-period {
+.enterprise-plus .hosts-list .host .host-info .graph-period {
 	margin-left: 4px;
 	float: right;
 	display: none
 }
-.enterprise .hosts-list .host .host-info .graph-period {
+.enterprise-plus .hosts-list .host .host-info .graph-period {
 	display: block
 }
-.enterprise .hosts-list .host .host-info .host-graph-viewer {
+.enterprise-plus .hosts-list .host .host-info .host-graph-viewer {
 	margin: 5px 10px 10px 311px;
 	overflow: hidden;
 	display: none
 }
-.enterprise .hosts-list .host .host-info .host-graph-viewer {
+.enterprise-plus .hosts-list .host .host-info .host-graph-viewer {
 	display: block
 }
-.enterprise .hosts-list .host .host-info .host-graph-cpu,
-.enterprise .hosts-list .host .host-info .host-graph-mem {
+.enterprise-plus .hosts-list .host .host-info .host-graph-cpu,
+.enterprise-plus .hosts-list .host .host-info .host-graph-mem {
 	width: 100%;
 	border: 1px solid #cfcfcf
 }
-.enterprise .hosts-list .host .host-info .host-graph-cpu,
-.enterprise .hosts-list .host .host-info .host-graph-mem {
+.enterprise-plus .hosts-list .host .host-info .host-graph-cpu,
+.enterprise-plus .hosts-list .host .host-info .host-graph-mem {
 	height: 176px
 }
-.enterprise .hosts-list .host .host-info .host-graph-mem {
+.enterprise-plus .hosts-list .host .host-info .host-graph-mem {
 	display: none
 }
-.enterprise .hosts-list .host .host-info .host-graph-viewer .detail .dot,
-.enterprise .hosts-list .host .host-info .host-graph-viewer .detail .item {
+.enterprise-plus .hosts-list .host .host-info .host-graph-viewer .detail .dot,
+.enterprise-plus .hosts-list .host .host-info .host-graph-viewer .detail .item {
 	display: none
 }
-.enterprise .hosts-list .host .host-info .host-graph-viewer .detail .x_label {
+.enterprise-plus .hosts-list .host .host-info .host-graph-viewer .detail .x_label {
 	opacity: .8
 }
-.enterprise .hosts-list .host .host-info .status-item {
+.enterprise-plus .hosts-list .host .host-info .status-item {
 	padding: 20px 0;
 	border-right: 1px solid #cfcfcf;
 	text-align: center
 }
-.enterprise .hosts-list .host .host-info .status-item {
+.enterprise-plus .hosts-list .host .host-info .status-item {
 	height: 43px;
 	padding: 9px 12px;
 	text-align: left;
 	border-bottom: 1px solid #cfcfcf
 }
-.enterprise .hosts-list .host .host-info .status-item.last {
+.enterprise-plus .hosts-list .host .host-info .status-item.last {
 	border-bottom: 0 none
 }
-.enterprise .hosts-list .host .host-info .status-item .status-title {
+.enterprise-plus .hosts-list .host .host-info .status-item .status-title {
 	color: #4d535c;
 	font-size: 26px;
 	margin: 0 0 3px 0
 }
-.enterprise .hosts-list .host .host-info .status-item .status-title {
+.enterprise-plus .hosts-list .host .host-info .status-item .status-title {
 	font-size: 20px;
 	height: 22px;
 	margin: 0
 }
-.enterprise .hosts-list .host .host-info .status-item .status-title span {
+.enterprise-plus .hosts-list .host .host-info .status-item .status-title span {
 	top: 2px;
 	vertical-align: text-top
 }
-.enterprise .hosts-list .host .host-info .status-item .status-icon {
+.enterprise-plus .hosts-list .host .host-info .status-item .status-icon {
 	color: #1f83bb;
 	font-size: 26px
 }
-.enterprise .hosts-list .host .host-info .status-item .status-icon {
+.enterprise-plus .hosts-list .host .host-info .status-item .status-icon {
 	font-size: 18px;
 	margin-right: 0
 }
-.enterprise .hosts-list .host .host-info .host-port .status-icon {
+.enterprise-plus .hosts-list .host .host-info .host-port .status-icon {
 	top: 0
 }
-.enterprise .hosts-list .host .host-info .status-item .status-text {
+.enterprise-plus .hosts-list .host .host-info .status-item .status-text {
 	color: #4d535c;
 	float: right;
 	position: relative;
 	top: -21px
 }
-.enterprise .hosts-list .host .label {
+.enterprise-plus .hosts-list .host .label {
 	cursor: default;
 	margin-top: 1px;
 	margin-right: 15px;
 	padding: 6px 12px
 }
-.enterprise .servers-list .servers-attach-host,
-.enterprise .servers-list .servers-link-server {
+.enterprise-plus .servers-list .servers-attach-host,
+.enterprise-plus .servers-list .servers-link-server {
 	display: inline-block
 }
-.enterprise .servers-list .server .server-info .server-output-link-btn {
+.enterprise-plus .servers-list .server .server-info .server-output-link-btn {
 	display: inline-block
 }
-.enterprise .server-hosts-list {
+.enterprise-plus .server-hosts-list {
 	display: block
 }
-.enterprise .server-hosts-list .no-hosts {
+.enterprise-plus .server-hosts-list .no-hosts {
 	height: 40px;
 	background: #fff;
 	border: 1px solid #cfcfcf;
@@ -2254,14 +2254,14 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .server-hosts-list {
+.enterprise-plus .server-hosts-list {
 	margin: 0 13px 13px 13px
 }
-.enterprise .server-hosts-list {
+.enterprise-plus .server-hosts-list {
 	border-top: 1px solid #d0d0d0
 }
-.enterprise .server-hosts-list .host,
-.enterprise .server-hosts-list .no-hosts {
+.enterprise-plus .server-hosts-list .host,
+.enterprise-plus .server-hosts-list .no-hosts {
 	height: 40px;
 	background: #fff;
 	border: 1px solid #cfcfcf;
@@ -2277,7 +2277,7 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .server-hosts-list .no-hosts {
+.enterprise-plus .server-hosts-list .no-hosts {
 	text-align: center;
 	font-size: 14px;
 	color: #777;
@@ -2285,7 +2285,7 @@ header.blur {
 	padding-top: 10px;
 	display: none
 }
-.enterprise .server-hosts-list .host .name-container {
+.enterprise-plus .server-hosts-list .host .name-container {
 	float: left;
 	height: auto;
 	padding-top: 0;
@@ -2293,51 +2293,51 @@ header.blur {
 	margin-top: 3px;
 	border-left: 1px solid #cfcfcf
 }
-.enterprise .server-hosts-list .host .name-container {
+.enterprise-plus .server-hosts-list .host .name-container {
 	border-left: none
 }
-.enterprise .server-routes-list .route .route-network,
-.enterprise .server-routes-list .route .route-comment {
+.enterprise-plus .server-routes-list .route .route-network,
+.enterprise-plus .server-routes-list .route .route-comment {
 	display: inline
 }
-.enterprise .server-routes-list .route .route-network {
+.enterprise-plus .server-routes-list .route .route-network {
 	margin-right: 5px
 }
-.enterprise .server-routes-list .route .route-comment {
+.enterprise-plus .server-routes-list .route .route-comment {
 	font-size: 18px;
 	vertical-align: text-top;
 	color: #777
 }
-.enterprise .server-routes-list .route .route-network-no-click {
+.enterprise-plus .server-routes-list .route .route-network-no-click {
 	display: none
 }
-.enterprise .server-routes-list .route .route-nat {
+.enterprise-plus .server-routes-list .route .route-nat {
 	display: inline-block
 }
-.enterprise .add-route-modal .modal .route-comment,
-.enterprise .add-route-modal .modal .net-gateway-toggle,
-.enterprise .add-route-modal .modal .nat-interface,
-.enterprise .add-route-modal .modal .nat-netmap,
-.enterprise .add-route-modal .modal .nat-route-toggle,
-.enterprise .add-route-modal .modal .route-advertisement-toggle,
-.enterprise .add-route-modal .modal .vpc-region,
-.enterprise .add-route-modal .modal .vpc-id {
+.enterprise-plus .add-route-modal .modal .route-comment,
+.enterprise-plus .add-route-modal .modal .net-gateway-toggle,
+.enterprise-plus .add-route-modal .modal .nat-interface,
+.enterprise-plus .add-route-modal .modal .nat-netmap,
+.enterprise-plus .add-route-modal .modal .nat-route-toggle,
+.enterprise-plus .add-route-modal .modal .route-advertisement-toggle,
+.enterprise-plus .add-route-modal .modal .vpc-region,
+.enterprise-plus .add-route-modal .modal .vpc-id {
 	display: block
 }
-.enterprise .add-route-modal .modal .form-control,
-.enterprise .modify-route-modal .modal .form-control {
+.enterprise-plus .add-route-modal .modal .form-control,
+.enterprise-plus .modify-route-modal .modal .form-control {
 	width: 240px
 }
-.enterprise .server-hosts-list .host .host-online,
-.enterprise .server-hosts-list .host .host-offline {
+.enterprise-plus .server-hosts-list .host .host-online,
+.enterprise-plus .server-hosts-list .host .host-offline {
 	display: inline-block;
 	padding: 5px 12px;
 	margin-right: 4px
 }
-.enterprise .server-hosts-list .host .name-container {
+.enterprise-plus .server-hosts-list .host .name-container {
 	border-left: 0 none
 }
-.enterprise .server-hosts-list .host .name-container .name-icon {
+.enterprise-plus .server-hosts-list .host .name-container .name-icon {
 	top: 3px;
 	margin-top: 0;
 	margin-right: 6px;
@@ -2345,21 +2345,21 @@ header.blur {
 	color: #64b3f6;
 	vertical-align: text-top
 }
-.enterprise .server-hosts-list .host .name-container .name-icon {
+.enterprise-plus .server-hosts-list .host .name-container .name-icon {
 	top: 5px
 }
-.enterprise .server-hosts-list .host .host-name,
-.enterprise .server-hosts-list .host .host-public-address {
+.enterprise-plus .server-hosts-list .host .host-name,
+.enterprise-plus .server-hosts-list .host .host-public-address {
 	font-size: 18px;
 	cursor: pointer;
 	vertical-align: text-top
 }
-.enterprise .server-hosts-list .host .host-name,
-.enterprise .server-hosts-list .host .host-public-address {
+.enterprise-plus .server-hosts-list .host .host-name,
+.enterprise-plus .server-hosts-list .host .host-public-address {
 	color: #428bca;
 	cursor: default
 }
-.enterprise .server-hosts-list .host .button-container {
+.enterprise-plus .server-hosts-list .host .button-container {
 	float: right;
 	display: inline-block;
 	margin-top: 5px;
@@ -2368,25 +2368,25 @@ header.blur {
 	white-space: nowrap;
 	border-left: 1px solid #cfcfcf
 }
-.enterprise .server-hosts-list .host .server-detach-host {
+.enterprise-plus .server-hosts-list .host .server-detach-host {
 	padding: 1px 8px
 }
-.enterprise .server-hosts-list .host .button-container {
+.enterprise-plus .server-hosts-list .host .button-container {
 	border-left: 0 none
 }
-.enterprise .server-links-list {
+.enterprise-plus .server-links-list {
 	display: block
 }
-.enterprise .server-links-list {
+.enterprise-plus .server-links-list {
 	margin: 0 13px 13px 13px
 }
-.enterprise .server-links-list {
+.enterprise-plus .server-links-list {
 	border-top: 1px solid #d0d0d0
 }
-.enterprise .server-links-list.no-links {
+.enterprise-plus .server-links-list.no-links {
 	border-top: none
 }
-.enterprise .server-links-list .link {
+.enterprise-plus .server-links-list .link {
 	height: 40px;
 	background: #fff;
 	border: 1px solid #cfcfcf;
@@ -2402,7 +2402,7 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .server-links-list .link .name-container {
+.enterprise-plus .server-links-list .link .name-container {
 	float: left;
 	height: auto;
 	padding-top: 0;
@@ -2410,24 +2410,24 @@ header.blur {
 	margin-top: 3px;
 	border-left: 1px solid #cfcfcf
 }
-.enterprise .server-links-list .link .name-container {
+.enterprise-plus .server-links-list .link .name-container {
 	border-left: none
 }
-.enterprise .server-links-list .link .label {
+.enterprise-plus .server-links-list .link .label {
 	display: inline-block;
 	padding: 5px 12px;
 	margin-right: 4px
 }
-.enterprise .server-links-list {
+.enterprise-plus .server-links-list {
 	display: block
 }
-.enterprise .server-links-list {
+.enterprise-plus .server-links-list {
 	display: block
 }
-.enterprise .server-links-list .link .name-container {
+.enterprise-plus .server-links-list .link .name-container {
 	border-left: 0 none
 }
-.enterprise .server-links-list .link .name-container .name-icon {
+.enterprise-plus .server-links-list .link .name-container .name-icon {
 	top: 3px;
 	margin-top: 0;
 	margin-right: 6px;
@@ -2435,19 +2435,19 @@ header.blur {
 	color: #64b3f6;
 	vertical-align: text-top
 }
-.enterprise .server-links-list .link .name-container .name-icon {
+.enterprise-plus .server-links-list .link .name-container .name-icon {
 	top: 5px
 }
-.enterprise .server-links-list .link .link-name {
+.enterprise-plus .server-links-list .link .link-name {
 	font-size: 18px;
 	cursor: pointer;
 	vertical-align: text-top
 }
-.enterprise .server-links-list .link .link-name {
+.enterprise-plus .server-links-list .link .link-name {
 	color: #428bca;
 	cursor: default
 }
-.enterprise .server-links-list .link .button-container {
+.enterprise-plus .server-links-list .link .button-container {
 	float: right;
 	display: inline-block;
 	margin-top: 5px;
@@ -2456,133 +2456,133 @@ header.blur {
 	white-space: nowrap;
 	border-left: 1px solid #cfcfcf
 }
-.enterprise .server-links-list .link .button-container {
+.enterprise-plus .server-links-list .link .button-container {
 	border-left: 0 none
 }
-.enterprise .sso-saml .sso-login-saml {
+.enterprise-plus .sso-saml .sso-login-saml {
 	display: block
 }
-.enterprise .sso-google .sso-login-google {
+.enterprise-plus .sso-google .sso-login-google {
 	display: block
 }
-.enterprise .sso-duo .sso-login-duo {
+.enterprise-plus .sso-duo .sso-login-duo {
 	display: block
 }
-.enterprise .settings-modal .email-from,
-.enterprise .settings-modal .email-username,
-.enterprise .settings-modal .email-password,
-.enterprise .settings-modal .email-server {
+.enterprise-plus .settings-modal .email-from,
+.enterprise-plus .settings-modal .email-username,
+.enterprise-plus .settings-modal .email-password,
+.enterprise-plus .settings-modal .email-server {
 	display: block
 }
-.enterprise .settings-modal .cloud-provider,
-.enterprise .settings-modal .aws-settings .settings-left,
-.enterprise .settings-modal .aws-settings .settings-right,
-.enterprise .settings-modal .oracle-settings .settings-left,
-.enterprise .settings-modal .oracle-settings .settings-right {
+.enterprise-plus .settings-modal .cloud-provider,
+.enterprise-plus .settings-modal .aws-settings .settings-left,
+.enterprise-plus .settings-modal .aws-settings .settings-right,
+.enterprise-plus .settings-modal .oracle-settings .settings-left,
+.enterprise-plus .settings-modal .oracle-settings .settings-right {
 	display: block
 }
-.enterprise .settings-modal .reverse-proxy,
-.enterprise .settings-modal .sso-mode,
-.enterprise .settings-modal .sso-match-slack,
-.enterprise .settings-modal .sso-match-google,
-.enterprise .settings-modal .sso-token,
-.enterprise .settings-modal .sso-secret,
-.enterprise .settings-modal .sso-cache,
-.enterprise .settings-modal .sso-client-cache,
-.enterprise .settings-modal .restrict-import,
-.enterprise .settings-modal .sso-host,
-.enterprise .settings-modal .sso-admin,
-.enterprise .settings-modal .sso-org,
-.enterprise .settings-modal .sso-saml-url,
-.enterprise .settings-modal .sso-saml-issuer-url,
-.enterprise .settings-modal .sso-saml-cert,
-.enterprise .settings-modal .sso-azure-app-id,
-.enterprise .settings-modal .sso-azure-secret,
-.enterprise .settings-modal .sso-azure-version,
-.enterprise .settings-modal .sso-azure-region,
-.enterprise .settings-modal .sso-okta-app-id,
-.enterprise .settings-modal .sso-okta-token,
-.enterprise .settings-modal .sso-okta-mode,
-.enterprise .settings-modal .sso-duo-mode,
-.enterprise .settings-modal .sso-google-key,
-.enterprise .settings-modal .sso-google-email,
-.enterprise .settings-modal .sso-onelogin-id,
-.enterprise .settings-modal .sso-onelogin-app-id,
-.enterprise .settings-modal .sso-onelogin-secret,
-.enterprise .settings-modal .sso-onelogin-mode,
-.enterprise .settings-modal .sso-jumpcloud-app-id,
-.enterprise .settings-modal .sso-jumpcloud-secret,
-.enterprise .settings-modal .sso-radius-host,
-.enterprise .settings-modal .sso-radius-secret,
-.enterprise .settings-modal .sso-yubico-client,
-.enterprise .settings-modal .sso-yubico-secret,
-.enterprise .settings-modal .sso-yubico-mode,
-.enterprise .settings-modal .server-sso-url {
+.enterprise-plus .settings-modal .reverse-proxy,
+.enterprise-plus .settings-modal .sso-mode,
+.enterprise-plus .settings-modal .sso-match-slack,
+.enterprise-plus .settings-modal .sso-match-google,
+.enterprise-plus .settings-modal .sso-token,
+.enterprise-plus .settings-modal .sso-secret,
+.enterprise-plus .settings-modal .sso-cache,
+.enterprise-plus .settings-modal .sso-client-cache,
+.enterprise-plus .settings-modal .restrict-import,
+.enterprise-plus .settings-modal .sso-host,
+.enterprise-plus .settings-modal .sso-admin,
+.enterprise-plus .settings-modal .sso-org,
+.enterprise-plus .settings-modal .sso-saml-url,
+.enterprise-plus .settings-modal .sso-saml-issuer-url,
+.enterprise-plus .settings-modal .sso-saml-cert,
+.enterprise-plus .settings-modal .sso-azure-app-id,
+.enterprise-plus .settings-modal .sso-azure-secret,
+.enterprise-plus .settings-modal .sso-azure-version,
+.enterprise-plus .settings-modal .sso-azure-region,
+.enterprise-plus .settings-modal .sso-okta-app-id,
+.enterprise-plus .settings-modal .sso-okta-token,
+.enterprise-plus .settings-modal .sso-okta-mode,
+.enterprise-plus .settings-modal .sso-duo-mode,
+.enterprise-plus .settings-modal .sso-google-key,
+.enterprise-plus .settings-modal .sso-google-email,
+.enterprise-plus .settings-modal .sso-onelogin-id,
+.enterprise-plus .settings-modal .sso-onelogin-app-id,
+.enterprise-plus .settings-modal .sso-onelogin-secret,
+.enterprise-plus .settings-modal .sso-onelogin-mode,
+.enterprise-plus .settings-modal .sso-jumpcloud-app-id,
+.enterprise-plus .settings-modal .sso-jumpcloud-secret,
+.enterprise-plus .settings-modal .sso-radius-host,
+.enterprise-plus .settings-modal .sso-radius-secret,
+.enterprise-plus .settings-modal .sso-yubico-client,
+.enterprise-plus .settings-modal .sso-yubico-secret,
+.enterprise-plus .settings-modal .sso-yubico-mode,
+.enterprise-plus .settings-modal .server-sso-url {
 	display: block
 }
-.enterprise .settings-modal .sso-token input,
-.enterprise .settings-modal .sso-secret input,
-.enterprise .settings-modal .sso-yubico-client input,
-.enterprise .settings-modal .sso-yubico-secret input {
+.enterprise-plus .settings-modal .sso-token input,
+.enterprise-plus .settings-modal .sso-secret input,
+.enterprise-plus .settings-modal .sso-yubico-client input,
+.enterprise-plus .settings-modal .sso-yubico-secret input {
 	font-family: 'Lucida Console', Monaco, monospace
 }
-.enterprise .server-settings-modal .right .replica-count {
+.enterprise-plus .server-settings-modal .right .replica-count {
 	display: block
 }
-.enterprise .server-settings-modal .pre-connect-msg {
+.enterprise-plus .server-settings-modal .pre-connect-msg {
 	display: block;
 	width: 100%
 }
-.enterprise .server-settings-modal .pre-connect-msg textarea {
+.enterprise-plus .server-settings-modal .pre-connect-msg textarea {
 	resize: none;
 	font-family: 'Lucida Console', Monaco, monospace;
-	width: 200px;
+	width: 100%;
 	font-size: 12px
 }
-.enterprise .server-settings-modal .link-ping-interval,
-.enterprise .server-settings-modal .link-ping-timeout,
-.enterprise .server-settings-modal .inactive-timeout,
-.enterprise .server-settings-modal .session-timeout {
+.enterprise-plus .server-settings-modal .link-ping-interval,
+.enterprise-plus .server-settings-modal .link-ping-timeout,
+.enterprise-plus .server-settings-modal .inactive-timeout,
+.enterprise-plus .server-settings-modal .session-timeout {
 	display: block
 }
-.enterprise .server-settings-modal .allowed-devices {
+.enterprise-plus .server-settings-modal .allowed-devices {
 	display: block
 }
-.enterprise .server-settings-modal .mss-fix {
+.enterprise-plus .server-settings-modal .mss-fix {
 	display: block
 }
 .enterprise .server-settings-modal .groups {
 	display: block
 }
-.enterprise .server-settings-modal .dns-mapping-toggle {
+.enterprise-plus .server-settings-modal .dns-mapping-toggle {
 	display: block
 }
-.enterprise .server-settings-modal .dynamic-firewall-toggle {
+.enterprise-plus .server-settings-modal .dynamic-firewall-toggle {
 	display: block
 }
-.enterprise .server-settings-modal .sso-auth-toggle {
+.enterprise-plus .server-settings-modal .sso-auth-toggle {
 	display: block
 }
-.enterprise .server-settings-modal .vxlan-toggle {
+.enterprise-plus .server-settings-modal .vxlan-toggle {
 	display: block
 }
-.enterprise .server-settings-modal .left .network-mode {
+.enterprise-plus .server-settings-modal .left .network-mode {
 	display: block
 }
-.enterprise .server-settings-modal .network-start {
+.enterprise-plus .server-settings-modal .network-start {
 	display: block
 }
-.enterprise .server-settings-modal .network-end {
+.enterprise-plus .server-settings-modal .network-end {
 	display: block;
 	margin-top: -7px
 }
-.enterprise .sso-logos {
+.enterprise-plus .sso-logos {
 	display: block
 }
-.enterprise .sso-logos div {
+.enterprise-plus .sso-logos div {
 	display: inline-block
 }
-.enterprise .users-list .duo-logo {
+.enterprise-plus .users-list .duo-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: .6;
@@ -2590,7 +2590,7 @@ header.blur {
 	width: 42px;
 	margin: 12px 9px 0 0
 }
-.enterprise .users-list .yubico-logo {
+.enterprise-plus .users-list .yubico-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: .6;
@@ -2598,7 +2598,7 @@ header.blur {
 	width: 14px;
 	margin: 12px 9px 0 0
 }
-.enterprise .users-list .slack-logo {
+.enterprise-plus .users-list .slack-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: .6;
@@ -2606,7 +2606,7 @@ header.blur {
 	width: 16px;
 	margin: 11px 9px 0 0
 }
-.enterprise .users-list .azure-logo {
+.enterprise-plus .users-list .azure-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: .6;
@@ -2614,15 +2614,15 @@ header.blur {
 	width: 14px;
 	margin: 12px 9px 0 0
 }
-.enterprise .users-list .authzero-logo {
+.enterprise-plus .users-list .authzero-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: .6;
-	height: 14px;
-	width: 14px;
+	height: 17px;
+	width: 17px;
 	margin: 11px 9px 0 0
 }
-.enterprise .users-list .google-logo {
+.enterprise-plus .users-list .google-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: .6;
@@ -2630,14 +2630,14 @@ header.blur {
 	width: 14px;
 	margin: 12px 9px 0 0
 }
-.enterprise .users-list .okta-logo {
+.enterprise-plus .users-list .okta-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 15px;
 	width: 16px;
 	margin: 12px 9px 0 0
 }
-.enterprise .users-list .onelogin-logo {
+.enterprise-plus .users-list .onelogin-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 15px;
@@ -2645,7 +2645,7 @@ header.blur {
 	margin: 12px 9px 0 0;
 	opacity: .68
 }
-.enterprise .users-list .jumpcloud-logo {
+.enterprise-plus .users-list .jumpcloud-logo {
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 17px;
@@ -2653,72 +2653,72 @@ header.blur {
 	margin: 9px 9px 0 0;
 	opacity: .68
 }
-.enterprise .users-list .saml-logo i,
-.enterprise .users-list .radius-logo i,
-.enterprise .users-list .plugin-logo i {
+.enterprise-plus .users-list .saml-logo i,
+.enterprise-plus .users-list .radius-logo i,
+.enterprise-plus .users-list .plugin-logo i {
 	color: #000;
 	opacity: .6;
 	font-size: 18px;
 	margin: 11px 9px 0 0
 }
-.enterprise .users-list .user .audit-user {
+.enterprise-plus .users-list .user .audit-user {
 	display: inline-block
 }
-.enterprise .admins-list .admin .audit-admin.no-audit-admin,
-.enterprise .users-list .user .audit-user.no-audit-user {
+.enterprise-plus .admins-list .admin .audit-admin.no-audit-admin,
+.enterprise-plus .users-list .user .audit-user.no-audit-user {
 	display: none
 }
-.enterprise .audit-user-modal .modal-dialog {
+.enterprise-plus .audit-user-modal .modal-dialog {
 	width: 785px
 }
-.enterprise .audit-user-modal .modal-body {
+.enterprise-plus .audit-user-modal .modal-body {
 	padding-bottom: 10px
 }
-.enterprise .audit-user-modal .modal-audit-user {
+.enterprise-plus .audit-user-modal .modal-audit-user {
 	padding: 0;
 	max-height: 400px;
 	overflow-y: auto;
 	padding: 0 8px
 }
-.enterprise .audit-user-modal .user-title {
+.enterprise-plus .audit-user-modal .user-title {
 	font-weight: bold;
 	font-size: 18px;
 	margin-bottom: 12px
 }
-.enterprise .audit-user-modal .audit-event {
+.enterprise-plus .audit-user-modal .audit-event {
 	list-style-type: none;
 	margin: 3px 0
 }
-.enterprise .audit-user-modal .event-addr {
+.enterprise-plus .audit-user-modal .event-addr {
 	min-width: 118px
 }
-.enterprise .audit-user-modal .event-time {
+.enterprise-plus .audit-user-modal .event-time {
 	min-width: 180px
 }
-.enterprise .audit-user-modal .event-time .glyphicon {
+.enterprise-plus .audit-user-modal .event-time .glyphicon {
 	margin-left: 8px
 }
-.enterprise.super-user .nav .admins {
+.enterprise-plus.super-user .nav .admins {
 	display: block
 }
-.enterprise .admins-list .admins-title {
+.enterprise-plus .admins-list .admins-title {
 	color: #4d535c;
 	display: inline-block;
 	margin-top: 6px;
 	margin-bottom: 19px;
 	font-size: 22px
 }
-.enterprise .admins-list .admins-list-buttons {
+.enterprise-plus .admins-list .admins-list-buttons {
 	float: right;
 	display: block
 }
-.enterprise .admins-list .label {
+.enterprise-plus .admins-list .label {
 	cursor: default;
 	margin-top: 1px;
 	margin-right: 15px;
 	padding: 6px 12px
 }
-.enterprise .admins-container {
+.enterprise-plus .admins-container {
 	margin-bottom: 25px;
 	border: 1px solid #cfcfcf;
 	background-color: #f9f9f9;
@@ -2733,7 +2733,7 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .admins-container .admins-list-title {
+.enterprise-plus .admins-container .admins-list-title {
 	margin: 0;
 	display: inline-block;
 	line-height: 16px;
@@ -2741,10 +2741,10 @@ header.blur {
 	top: 2px;
 	font-size: 19px
 }
-.enterprise .admins-list .admins-list-title a {
+.enterprise-plus .admins-list .admins-list-title a {
 	font-size: 19px
 }
-.enterprise .admins-container .admins-list-header {
+.enterprise-plus .admins-container .admins-list-header {
 	background-color: #fff;
 	padding: 14px 11px 16px 14px;
 	border-bottom: 1px solid #ccc;
@@ -2755,15 +2755,15 @@ header.blur {
 	-moz-border-top-right-radius: 2px;
 	border-top-right-radius: 2px
 }
-.enterprise .admins-list .admins-list-header button {
+.enterprise-plus .admins-list .admins-list-header button {
 	margin-left: 10px;
 	float: right
 }
-.enterprise .admins-list-container {
+.enterprise-plus .admins-list-container {
 	margin: 0 13px 13px 13px
 }
-.enterprise .admins-list .loading,
-.enterprise .admins-list .admin {
+.enterprise-plus .admins-list .loading,
+.enterprise-plus .admins-list .admin {
 	height: 40px;
 	background: #fff;
 	border: 1px solid #cfcfcf;
@@ -2779,7 +2779,7 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .admins-list .loading {
+.enterprise-plus .admins-list .loading {
 	text-align: center;
 	font-size: 14px;
 	color: #777;
@@ -2787,10 +2787,10 @@ header.blur {
 	padding-top: 10px;
 	display: none
 }
-.enterprise .admins-list .admin .selector {
+.enterprise-plus .admins-list .admin .selector {
 	margin: 10px 10px
 }
-.enterprise .admins-list .admin .name-container {
+.enterprise-plus .admins-list .admin .name-container {
 	float: left;
 	height: 28px;
 	padding-top: 0;
@@ -2798,7 +2798,7 @@ header.blur {
 	margin-top: 5px;
 	border-left: 1px solid #cfcfcf
 }
-.enterprise .admins-list .admin .name-container .name-icon {
+.enterprise-plus .admins-list .admin .name-container .name-icon {
 	top: 3px;
 	margin-top: 0;
 	margin-right: 6px;
@@ -2806,18 +2806,18 @@ header.blur {
 	color: #64b3f6;
 	vertical-align: text-top
 }
-.enterprise .admins-list .admin .name-container .admin-username {
+.enterprise-plus .admins-list .admin .name-container .admin-username {
 	font-size: 18px;
 	cursor: pointer;
 	vertical-align: text-top
 }
-.enterprise .admins-list .admin .name-container .admin-id {
+.enterprise-plus .admins-list .admin .name-container .admin-id {
 	position: relative;
 	color: #4d535c;
 	font-size: 10px;
 	display: none
 }
-.enterprise .admins-list .right-container {
+.enterprise-plus .admins-list .right-container {
 	float: right;
 	display: inline-block;
 	margin-top: 5px;
@@ -2826,62 +2826,59 @@ header.blur {
 	white-space: nowrap;
 	border-left: 1px solid #cfcfcf
 }
-.enterprise .admins-list .right-container a {
+.enterprise-plus .admins-list .right-container a {
 	font-size: 20px;
 	color: #4e8bbf;
 	cursor: pointer;
 	margin-left: 3px
 }
-.enterprise .admins-list .right-container a.disabled {
+.enterprise-plus .admins-list .right-container a.disabled {
 	pointer-events: none;
 	cursor: not-allowed;
 	opacity: .65
 }
-.enterprise .admins-list .right-container a:hover {
+.enterprise-plus .admins-list .right-container a:hover {
 	text-decoration: none;
 	color: #2a6496
 }
-.enterprise .admins-list .admin .no-otp-auth {
+.enterprise-plus .admins-list .admin .no-otp-auth {
 	display: none
 }
-.enterprise .modal .generate-new-api-key {
+.enterprise-plus .modal .generate-new-api-key {
 	margin-top: 5px;
 	margin-bottom: 20px;
 	width: 200px
 }
-.enterprise .nav .links {
+.enterprise-plus .nav .links {
 	display: block
 }
-.enterprise .nav .links {
+.enterprise-plus .links .links-list {
 	display: block
 }
-.enterprise .links .links-list {
-	display: block
-}
-.enterprise .links .links-upgrade {
+.enterprise-plus .links .links-upgrade {
 	display: none
 }
-.enterprise .links-list .links-list-title {
+.enterprise-plus .links-list .links-list-title {
 	color: #4d535c;
 	display: inline-block;
 	margin-top: 6px;
 	margin-bottom: 19px;
 	font-size: 22px
 }
-.enterprise .links-list .links-list-buttons {
+.enterprise-plus .links-list .links-list-buttons {
 	float: right;
 	display: block
 }
-.enterprise .link-location {
+.enterprise-plus .link-location {
 	margin-top: 13px
 }
-.enterprise .link-locations-list {
+.enterprise-plus .link-locations-list {
 	margin: 0 13px 13px 13px
 }
-.enterprise .links-list .link,
-.enterprise .links-list .link-location,
-.enterprise .links-list-container .no-links,
-.enterprise .link-locations-list .no-locations {
+.enterprise-plus .links-list .link,
+.enterprise-plus .links-list .link-location,
+.enterprise-plus .links-list-container .no-links,
+.enterprise-plus .link-locations-list .no-locations {
 	margin-bottom: 25px;
 	border: 1px solid #cfcfcf;
 	background-color: #f9f9f9;
@@ -2896,72 +2893,72 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .links-list .link-location {
+.enterprise-plus .links-list .link-location {
 	margin-bottom: 0;
 	padding-bottom: 13px
 }
-.enterprise .links .link-location .tooltip-inner {
+.enterprise-plus .links .link-location .tooltip-inner {
 	white-space: normal;
 	max-width: 900px
 }
-.enterprise .links-list .link .label {
+.enterprise-plus .links-list .link .label {
 	cursor: default;
 	margin-top: 1px;
 	margin-right: 15px;
 	padding: 6px 12px
 }
-.enterprise .users-list .prev-page,
-.enterprise .users-list .next-page {
+.enterprise-plus .users-list .prev-page,
+.enterprise-plus .users-list .next-page {
 	margin: 12px 0;
 	min-width: 105px
 }
-.enterprise .links-list>.prev-page,
-.enterprise .links-list>.next-page {
+.enterprise-plus .links-list>.prev-page,
+.enterprise-plus .links-list>.next-page {
 	margin: 0 0 40px 0
 }
-.enterprise .links-list .prev-page {
+.enterprise-plus .links-list .prev-page {
 	float: left
 }
-.enterprise .links-list .next-page {
+.enterprise-plus .links-list .next-page {
 	float: right
 }
-.enterprise .links-list .prev-page,
-.enterprise .links-list .next-page,
-.enterprise .links-list .pages {
+.enterprise-plus .links-list .prev-page,
+.enterprise-plus .links-list .next-page,
+.enterprise-plus .links-list .pages {
 	display: none
 }
-.enterprise .links-list .pages {
+.enterprise-plus .links-list .pages {
 	margin-top: 16px;
 	text-align: center;
 	color: #9c9c9c
 }
-.enterprise .links-list>.pages {
+.enterprise-plus .links-list>.pages {
 	margin-top: 32px
 }
-.enterprise .links-list .pages.padded-left {
+.enterprise-plus .links-list .pages.padded-left {
 	margin-left: 105px
 }
-.enterprise .links-list .pages.padded-right {
+.enterprise-plus .links-list .pages.padded-right {
 	margin-right: 105px
 }
-.enterprise .links-list .pages .page-links {
+.enterprise-plus .links-list .pages .page-links {
 	display: inline-block
 }
-.enterprise .links-list .pages .page-link,
-.enterprise .links-list .pages .page-link:hover {
+.enterprise-plus .links-list .pages .page-link,
+.enterprise-plus .links-list .pages .page-link:hover {
 	padding: 0 4px;
 	cursor: pointer;
 	color: #9c9c9c
 }
-.enterprise .links-list .pages .page-link.current,
-.enterprise .links-list .pages .page-link.current:hover {
+.enterprise-plus .links-list .pages .page-link.current,
+.enterprise-plus .links-list .pages .page-link.current:hover {
 	cursor: default;
 	color: #4b4b4b;
 	font-weight: bold;
 	text-decoration: none
 }
-.enterprise .links-list-container .no-links,
-.enterprise .links-list-container .no-locations {
+.enterprise-plus .links-list-container .no-links,
+.enterprise-plus .links-list-container .no-locations {
 	text-align: center;
 	font-size: 14px;
 	padding: 10px;
@@ -2969,11 +2966,11 @@ header.blur {
 	background-color: #f5f5f5;
 	display: none
 }
-.enterprise .links-list-container .no-locations {
+.enterprise-plus .links-list-container .no-locations {
 	margin: 13px 0
 }
-.enterprise .links-list .link .link-header,
-.enterprise .links-list .link-location .link-location-header {
+.enterprise-plus .links-list .link .link-header,
+.enterprise-plus .links-list .link-location .link-location-header {
 	background-color: #fff;
 	padding: 10px 11px 16px 14px;
 	border-bottom: 1px solid #ccc;
@@ -2984,38 +2981,38 @@ header.blur {
 	-moz-border-top-right-radius: 2px;
 	border-top-right-radius: 2px
 }
-.enterprise .links-list .link-location .link-location-header {
+.enterprise-plus .links-list .link-location .link-location-header {
 	padding: 7px 7px 5px 11px
 }
-.enterprise .links-list .link .link-header button,
-.enterprise .links-list .link-location .link-location-header button {
+.enterprise-plus .links-list .link .link-header button,
+.enterprise-plus .links-list .link-location .link-location-header button {
 	margin-left: 10px;
 	float: right
 }
-.enterprise .links-list .link .link-title,
-.enterprise .links-list .link-location .link-location-title {
+.enterprise-plus .links-list .link .link-title,
+.enterprise-plus .links-list .link-location .link-location-title {
 	margin: 0;
 	display: inline-block;
 	line-height: 16px;
 	position: relative;
 	top: 2px
 }
-.enterprise .links-list .link-location .link-location-title {
+.enterprise-plus .links-list .link-location .link-location-title {
 	top: -2px
 }
-.enterprise .links-list .link .link-title a {
+.enterprise-plus .links-list .link .link-title a {
 	font-size: 19px
 }
-.enterprise .links-list .link-location .link-location-title {
+.enterprise-plus .links-list .link-location .link-location-title {
 	font-size: 18px;
 	margin-top: 2px
 }
-.enterprise .links-list .link .link-title a,
-.enterprise .links-list .link-location .link-location-title a {
+.enterprise-plus .links-list .link .link-title a,
+.enterprise-plus .links-list .link-location .link-location-title a {
 	cursor: pointer
 }
-.enterprise .links-list .link .link-title .link-id,
-.enterprise .links-list .link-location .link-location-title .location-id {
+.enterprise-plus .links-list .link .link-title .link-id,
+.enterprise-plus .links-list .link-location .link-location-title .location-id {
 	position: relative;
 	color: #4d535c;
 	font-size: 10px;
@@ -3023,14 +3020,14 @@ header.blur {
 	top: -2px;
 	margin-left: 5px
 }
-.enterprise .links-list .link.show-hidden .link-title .link-id,
-.enterprise .links-list .link.show-hidden .link-location-title .location-id {
+.enterprise-plus .links-list .link.show-hidden .link-title .link-id,
+.enterprise-plus .links-list .link.show-hidden .link-location-title .location-id {
 	display: inline
 }
-.enterprise .link-location .link-route,
-.enterprise .link-location .link-host,
-.enterprise .link-location .link-peer,
-.enterprise .link-location .no-routes {
+.enterprise-plus .link-location .link-route,
+.enterprise-plus .link-location .link-host,
+.enterprise-plus .link-location .link-peer,
+.enterprise-plus .link-location .no-routes {
 	height: 40px;
 	background: #fff;
 	border: 1px solid #cfcfcf;
@@ -3046,16 +3043,16 @@ header.blur {
 	-moz-background-clip: padding;
 	background-clip: padding-box
 }
-.enterprise .link-location .no-routes {
+.enterprise-plus .link-location .no-routes {
 	text-align: center;
 	font-size: 14px;
 	padding: 10px;
 	color: #777;
 	background-color: #f5f5f5
 }
-.enterprise .link-location .link-route .name-container,
-.enterprise .link-location .link-host .name-container,
-.enterprise .link-location .link-peer .name-container {
+.enterprise-plus .link-location .link-route .name-container,
+.enterprise-plus .link-location .link-host .name-container,
+.enterprise-plus .link-location .link-peer .name-container {
 	float: left;
 	height: auto;
 	padding-top: 0;
@@ -3063,9 +3060,9 @@ header.blur {
 	margin-top: 3px;
 	border-left: 0 none
 }
-.enterprise .link-location .link-route .name-container .name-icon,
-.enterprise .link-location .link-host .name-container .name-icon,
-.enterprise .link-location .link-peer .name-container .name-icon {
+.enterprise-plus .link-location .link-route .name-container .name-icon,
+.enterprise-plus .link-location .link-host .name-container .name-icon,
+.enterprise-plus .link-location .link-peer .name-container .name-icon {
 	top: 3px;
 	margin-top: 0;
 	margin-right: 6px;
@@ -3073,17 +3070,17 @@ header.blur {
 	color: #64b3f6;
 	vertical-align: text-top
 }
-.enterprise .link-location .link-route .title,
-.enterprise .link-location .link-host .title,
-.enterprise .link-location .link-peer .title {
+.enterprise-plus .link-location .link-route .title,
+.enterprise-plus .link-location .link-host .title,
+.enterprise-plus .link-location .link-peer .title {
 	font-size: 18px;
 	vertical-align: text-top;
 	color: #428bca;
 	cursor: default
 }
-.enterprise .link-location .link-route .button-container,
-.enterprise .link-location .link-host .button-container,
-.enterprise .link-location .link-peer .button-container {
+.enterprise-plus .link-location .link-route .button-container,
+.enterprise-plus .link-location .link-host .button-container,
+.enterprise-plus .link-location .link-peer .button-container {
 	float: right;
 	display: inline-block;
 	margin-top: 5px;
@@ -3092,29 +3089,29 @@ header.blur {
 	white-space: nowrap;
 	border-left: 0 none
 }
-.enterprise .link-location .link-route .button-container .btn-xs,
-.enterprise .link-location .link-host .button-container .btn-xs,
-.enterprise .link-location .link-peer .button-container .btn-xs {
+.enterprise-plus .link-location .link-route .button-container .btn-xs,
+.enterprise-plus .link-location .link-host .button-container .btn-xs,
+.enterprise-plus .link-location .link-peer .button-container .btn-xs {
 	padding: 0 5px
 }
-.enterprise .link-location .link-host .host-name {
+.enterprise-plus .link-location .link-host .host-name {
 	cursor: pointer
 }
-.enterprise .link-location .link-host .button-container .link-uri-host,
-.enterprise .link-location .link-host .button-container .link-conf-host {
+.enterprise-plus .link-location .link-host .button-container .link-uri-host,
+.enterprise-plus .link-location .link-host .button-container .link-conf-host {
 	margin-right: 4px
 }
-.enterprise .link-location .link-peer .button-container .link-add-transit,
-.enterprise .link-location .link-peer .button-container .link-remove-transit {
+.enterprise-plus .link-location .link-peer .button-container .link-add-transit,
+.enterprise-plus .link-location .link-peer .button-container .link-remove-transit {
 	margin-right: 4px
 }
-.enterprise .link-location .link-host .button-container .label,
-.enterprise .link-location .link-peer .button-container .label {
+.enterprise-plus .link-location .link-host .button-container .label,
+.enterprise-plus .link-location .link-peer .button-container .label {
 	display: inline-block;
 	padding: 5px 12px;
 	margin-right: 4px
 }
-.enterprise .location-host-uri-modal .modal input {
+.enterprise-plus .location-host-uri-modal .modal input {
 	width: 557px;
 	display: inline-block
 }
@@ -3617,3 +3614,4 @@ body.dark,
 .dark .users-list .user-groups .fa {
 	color: #c8d9e6
 }
+
