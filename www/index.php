@@ -18,7 +18,9 @@ $result = null;
 if(isset($_GET['path'])) {
     $path = trim($_GET['path'], ' /');
     $pathParts = explode('/', $_GET['path']);
-    if(count($pathParts) > 1 && $pathParts[0] == 'notification') {
+    if(count($pathParts) > 0 && $pathParts[0] == 'healthz') {
+        $result = 'OK';
+    } else if(count($pathParts) > 1 && $pathParts[0] == 'notification') {
         // Any notification/[version] will be answered here
         $msg = 'Fake API endpoint for v' . $minVersionName . ' active and reachable (contacted at ' . date('r') . ').';
         if(intval($pathParts[1]) < $minVersionNumber) {
