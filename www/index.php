@@ -51,6 +51,8 @@ if(isset($_GET['path'])) {
             $stylesheet = '';
             if(str_contains($input, 'premium')) {
                 $license = 'premium';
+                $stylesheet = file_get_contents('premium.css');
+                // No need to install the user license "id" into CSS class, as that file only contains custom patches
             } else if(str_contains($input, 'enterprise')) {
                 $license = 'enterprise';
                 $stylesheet = file_get_contents('enterprise.css');
@@ -77,7 +79,7 @@ if(isset($_GET['path'])) {
 
             if($state == 'Active') {
                 $result = array(
-                    'active' => $license == 'enterprise_plus',
+                    'active' => true, // if the sub is not active, the css won't use the LICENSE-subscription_id pattern
                     'status' => $state,
                     'plan' => $license,
                     'url_key' => $user,
@@ -152,7 +154,7 @@ if(isset($_GET['path'])) {
                 ),
                 'enterprise_plus' => array(
                     'amount' => $licenseCosts
-                ),
+                )
             )
         );
     }

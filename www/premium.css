@@ -1,0 +1,12 @@
+/* Fixes for the premium subscription-modal, which seems to be empty / broken in recent versions */
+.enterprise-modal .enterprise-info {
+    display: inherit;
+}
+
+.enterprise-modal .modal .enterprise-info .premium-plan {
+    display: inherit;
+}
+
+.enterprise-modal .enterprise-buttons {
+    display: inherit;
+}
