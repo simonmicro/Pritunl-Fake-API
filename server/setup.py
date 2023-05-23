@@ -7,7 +7,7 @@ import argparse
 
 originalApiServer = 'app.pritunl.com'
 originalAuthServer = 'auth.pritunl.com'
-newApiServer = 'pritunl-api.simonmicro.de'
+defaultApiServer = 'pritunl-api.simonmicro.de'
 searchIn = [*glob.glob('/usr/lib/python3*'), '/usr/lib/pritunl/', '/usr/share/pritunl/www/', '/usr/lib/pritunl/', '/usr/share/pritunl/www/']
 
 print("  ____       _ _               _   _____     _             _    ____ ___ ")
@@ -22,8 +22,10 @@ interactive = True
 parser = argparse.ArgumentParser()
 parser.add_argument('--install', type=str, default='DEFAULT', nargs='?', help='Do not ask and install new API endpoint.')
 parser.add_argument('--reset', type=str, default='DEFAULT', nargs='?', help='Do not ask and remove new API endpoint.')
+parser.add_argument('--api-server', type=str, default=defaultApiServer, help='Set new API server.')
 args = parser.parse_args()
 
+newApiServer = args.api_server if args.api_server.strip() != '' else defaultApiServer
 if args.install != 'DEFAULT':
     interactive = False
     newApiServer = args.install if args.install is not None else newApiServer

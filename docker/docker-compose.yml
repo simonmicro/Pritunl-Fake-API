@@ -11,6 +11,8 @@ services:
         build:
             context: ../server
             dockerfile: ../docker/Dockerfile
+            args:
+                - API_SERVER_DOMAIN=${API_SERVER_DOMAIN:-}
         restart: always
         depends_on:
             - mongodb

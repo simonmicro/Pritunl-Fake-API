@@ -25,12 +25,24 @@ Make sure to support the developers by buying the choosen subscription for your 
 ## How to setup (api) (optional) ##
 This is _optional_. You can simply use the default instance of this API (host is noted inside the `setup.py` script) and profit from "automatic" updates.
 
+## API Only: Using Apache
 Just transfer the `www` files inside a public accessible root-folder on your _dedicated_ Apache webserver (really everthing with PHP support works). Also make sure your instance has a valid SSL-certificate (Let's encrypt is enough), otherwise it may won't work.
 An example Apache install process can be found [here](docs/apache/install.md). If you want to test your instance, just open the public accessible URI in your browser and append `/healthz` to it - if you see some JSON with the text, then everything worked!
+
+### API Only: Using Nginx
+Just transfer the `www` files inside a public accessible root-folder on your _dedicated_ Nginx webserver (really everthing with PHP support works). Also make sure your instance has a valid SSL-certificate (Let's encrypt is enough), otherwise it may won't work.
+See the documentation in [Nginx Install](docs/nginx/install.md).
+
+### API Only: Using Docker
+See the documentation in [Docker Install](docs/docker/api-only-install.md).
+
+### Fully Patched Pritunl: Using Docker
+This api has also its own docker image. Take a look into the `docker` folder and enjoy!
+
+See the documentation in [Patched Pritunl Docker Install](docs/docker/pritunl-patched-install.md).
 
 ### Nett2Know ###
 * This modification will also block any communication to the Pritunl servers - so no calling home :)
 * SSO will not work with this api version! As Pritunls own authentication servers handle the whole SSO stuff, track instance ids and verify users, I won't implement this part for privacy concerns (and also this would need to be securly implemented and a database).
-* This api has also its own docker image. Take a look into the `docker` folder and enjoy!
 
 Have fun with your new premium/enterprise/ultimate Pritunl instance!
