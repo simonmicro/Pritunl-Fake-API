@@ -4,10 +4,16 @@
 // Config
 $minVersionNumber = 1003235044068;
 $minVersionName = '1.32.3504.68';
+$minVersionIgnored = false; // use this to ignore the min version check - used for the public endpoint to avoid breaking too many clients at once
 $licenseCosts = 42; // insert here any price you want - "0" is a special value, which also breaks the UI ;)
 
 header('Access-Control-Allow-Origin: *'); //Allow access from everywhere...
 $code = 200; // Assuming everything is fine for now
+
+// Check if a ".ignoreMinVersion" file exists
+if(!$minVersionIgnored && file_exists('.ignoreMinVersion')) {
+    $minVersionIgnored = true; // If so, we ignore the min version check
+}
 
 // Parse body (if possible)
 $body = json_decode(file_get_contents('php://input'));
@@ -40,7 +46,7 @@ if (version_compare(PHP_VERSION, '8.0.0', '<')) {
     } else if(count($pathParts) > 0 && $pathParts[0] == 'ykwyhd') {
         // The "you-know-what-you-have-done" endpoint -> used as dummy url target
         $result = array('detail' => 'You know what you have done.');
-    } else if($clientVersion != null && $clientVersion < $minVersionNumber) {
+    } else if(!$minVersionIgnored && $clientVersion != null && $clientVersion < $minVersionNumber) {
         // Check if the instance is too old for us (for now following operators)
         $result = array('error_msg' => 'This API supports v' . $minVersionName . ' (' . $minVersionNumber . ') or higher.');
         $code = 473;
