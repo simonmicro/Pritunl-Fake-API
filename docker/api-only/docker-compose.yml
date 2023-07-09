@@ -1,0 +1,98 @@
+# Runs this API, either on port 80 or behind Traefik, either on docker swarm or single daemon.
+# Choose the right configuration for you and comment out the other.
+# Read the comments carefully.
+#
+#
+# In case you run behind Traefik, you need to setup the traefik router HOST
+# You need correctly setup traefik and docker network (here called proxy_external)
+#
+# /!\ /!\ Make sure the mount volumes match correctly. /!\ /!\
+#
+# The first volume is the path to the www folder from the root of this repo.
+# The path shall be a full path, or be next to this docker-compose.yml file. 
+# No parent folder navigation like `../../../` is allowed by docker.
+# 
+# -> Easy solution:
+#    Once you have cloned this repo, you shall move this docker-compose.yml file to the root of the repo.
+#
+# The second volume is the path to the nginx server config file.
+# This needs the commited nginx server config (or your own adapted version) to work properly.
+# See the file `<repo_root>/docker/api-only/conf.d/pritunl-fake-api.conf` for more details.
+
+version: '3.7'
+services:
+  web:
+    image: trafex/php-nginx
+    volumes:
+      - "./www:/var/www/html:ro"
+      - "./docker/api-only/conf.d/pritunl-fake-api.conf:/etc/nginx/conf.d/pritunl-fake-api.conf"
+    #################################################################
+    ### If you run behind Traefik COMMENT OUT the following lines ###
+    ### BEGIN TRAEFIK_BLOCK ###
+    ports:
+      - "80:8080"
+    #################################################################
+
+    #################################################################
+
+    ### BEGIN SINGLE_DAEMON_BLOCK ###
+
+    ### If you run behind on Docker Single Daemon (NOT Swarm) uncomment the following lines ###
+    # networks:
+    #   - default
+    #   - proxy_external
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.docker.network=proxy_external"
+    #   - "traefik.tags=proxy_external"
+    #   ### Services
+    #   ## API
+    #   - "traefik.http.services.pritunl-api.loadbalancer.server.port=8080"
+    #   ### Routers
+    #   - "traefik.http.routers.pritunl-api.entrypoints=https"
+    #   - "traefik.http.routers.pritunl-api.rule=Host(`mypritunlfakeapi.example.com`)"
+    #   - "traefik.http.routers.pritunl-api.service=pritunl-api"
+    #   - "traefik.http.routers.pritunl-api.tls=true"
+    #   - "traefik.http.routers.pritunl-api.tls.certresolver=http"
+# networks:
+#   proxy_external:
+#     external: true
+#     name: proxy_external
+
+    ### END SINGLE_DAEMON_BLOCK ###
+
+
+    ### BEGIN SWARM_BLOCK ###
+
+    ### If you run on Docker Swarm uncomment the following lines ###
+    # networks:
+    #   - default
+    #   - proxy_external
+    # labels:
+    #   - "traefik.enable=true"
+    # deploy:
+    #   labels:
+    #     - "traefik.enable=true"
+    #     - "traefik.docker.network=proxy_external"
+    #     - "traefik.tags=proxy_external"
+    #     ### Services
+    #     ## API
+    #     - "traefik.http.services.pritunl-api.loadbalancer.server.port=8080"
+    #     ### Routers
+    #     - "traefik.http.routers.pritunl-api.entrypoints=https"
+    #     - "traefik.http.routers.pritunl-api.rule=Host(`mypritunlfakeapi.example.com`)"
+    #     - "traefik.http.routers.pritunl-api.service=pritunl-api"
+    #     - "traefik.http.routers.pritunl-api.tls=true"
+    #     - "traefik.http.routers.pritunl-api.tls.certresolver=http"
+# networks:
+#   proxy_external:
+#     external: true
+#     name: proxy_external
+
+    ### END SWARM_BLOCK ###
+
+
+
+    ### END TRAEFIK BLOCK ###
+    #################################################################
+    
