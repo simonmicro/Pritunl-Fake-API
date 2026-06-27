@@ -1,3 +1,14 @@
+# This Project Has Reached End-of-Life (EOL)
+If you want to get the full story: https://github.com/simonmicro/Pritunl-Fake-API/issues/44
+
+**TL;DR:** I haven't used Pritunl for over five years now and have only continued maintaining this repository because I enjoyed working on it. As a result, the project unintentionally entered a long-term support (LTS) phase, receiving no major new features and only essential bug fixes. In March 2026, I moved the project into its **End-of-Support** phase. Since then, no further changes have been made while I searched for someone to take over maintenance. As of **2026-07-01**, I am ending that extended search for a successor. Since no new maintainer has stepped forward, the project is now officially entering its **End-of-Life (EOL)** phase.
+
+If you are still using this project, you should start hosting your own instance. The public instance will be shut down soon after a short grace period.
+
+_So Long, and Thanks for All the Fish 🫡_
+
+---
+
 # What is this? #
 This neat script provides a little fake API to unlock all premium/enterprise/enterprise+ (here called ultimate) features of your own Pritunl VPN server. If Pritunl wouldn't be mostly free already, you could call this a crack. An Open Source crack.
 
